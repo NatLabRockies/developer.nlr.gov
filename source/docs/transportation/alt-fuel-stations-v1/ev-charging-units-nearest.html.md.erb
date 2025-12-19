@@ -1,8 +1,8 @@
 ---
-title: Electric Vehicle Charging Ports
-summary: Return a CSV file of EV charging ports for stations that match your query. For JSON or other file formats, this information is available via the <a href="/docs/transportation/alt-fuel-stations-v1/all/">All Stations</a> API.
-url: GET /api/alt-fuel-stations/v1/ev-charging-units
-sort_value: "60"
+title: Nearest Electric Vehicle Charging Ports
+summary: Return a CSV file of EV charging ports for the nearest alternative fuel stations within a distance of a given location. For JSON or other file formats, this information is available via the <a href="/docs/transportation/alt-fuel-stations-v1/nearest/">Nearest Stations</a> API.
+url: GET /api/alt-fuel-stations/v1/ev-charging-units/nearest
+sort_value: "65"
 ---
 
 # <%= current_page.data.title %> <span class="url">(<%= current_page.data.url %>)</span>
@@ -14,7 +14,7 @@ sort_value: "60"
 
 ## Request URL
 
-<pre>GET /api/alt-fuel-stations/v1/ev-charging-units.csv?parameters</pre>
+<pre>GET /api/alt-fuel-stations/v1/ev-charging-units/nearest.csv?parameters</pre>
 
 ## Request Parameters
 
@@ -32,6 +32,9 @@ The following query parameters may be passed in the request to control the outpu
   <tbody>
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/access") %>
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/api_key") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/latitude") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/longitude") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/radius") %>
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/cards_accepted") %>
     <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/country", locals: {resources: "stations"} %>
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_charging_level") %>
@@ -43,6 +46,7 @@ The following query parameters may be passed in the request to control the outpu
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/facility_type") %>
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/federal_agency") %>
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/limit") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/offset") %>
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/status") %>
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/state") %>
     <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/zip") %>
