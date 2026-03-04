@@ -6,6 +6,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass';
 import { faSquareFacebook } from '@fortawesome/free-brands-svg-icons/faSquareFacebook';
 import { faThreads } from '@fortawesome/free-brands-svg-icons/faThreads';
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons/faTriangleExclamation';
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons/faXTwitter';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
@@ -20,6 +21,7 @@ library.add(
   faMagnifyingGlass,
   faSquareFacebook,
   faThreads,
+  faTriangleExclamation,
   faXTwitter,
   faXmark,
   faYoutube,
