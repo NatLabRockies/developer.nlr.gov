@@ -34,12 +34,17 @@
     <main id="content" class="container-xl">
       <%= partial("layouts/breadcrumbs") %>
 
-      <div class="alert alert-warning d-flex align-items-center" role="alert">
-        <i class="fa-solid fa-triangle-exclamation bi flex-shrink-0 me-2"></i>
-        <p class="m-0 lh-sm">
-        <strong>Existing API users:</strong> Update any <code>developer.nrel.gov</code> references in your code to <code>developer.nlr.gov</code> by <strong>April 30, 2026</strong>, to avoid service interruptions. Learn more about the <%= link_to("domain transition", "/docs/nlr-domain-transition.html") %>.
+      <% unless current_page.data.hide_domain_transition_alert %>
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+          <i class="fa-solid fa-triangle-exclamation bi flex-shrink-0 me-2"></i>
+          <p class="m-0 lh-sm">
+            <strong>Existing API Users:</strong> Update any <code>developer.nrel.gov</code> references in your code to <code>developer.nlr.gov</code> by <strong>April 30, 2026</strong>, to avoid service interruptions.
+            <% unless current_page.data.hide_domain_transition_link %>
+              Learn more about the <%= link_to("domain transition", "/docs/nlr-domain-transition.html") %>.
+            <% end %>
+          </p>
         </div>
-      </div>
+      <% end %>
 
       <%= yield %>
 
