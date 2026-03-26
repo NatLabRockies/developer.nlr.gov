@@ -15,18 +15,12 @@ paths:
         - "$ref": "#/parameters/OutputFormat"
         - "$ref": "#/parameters/ApiKey"
         - in: query
-          description: Return only fuels associated with current light-duty automobiles
-          name: current_light_duty
-          required: false
-          type: boolean
-        - in: query
           description: Return only fuels associated with current heavy-duty vehicles
           name: current_heavy_duty
           required: false
           type: boolean
         - in: query
-          description: Return all fuels associated with current light-duty automobiles and
-            current heavy-duty vehicles
+          description: Return all fuels associated with current heavy-duty vehicles
           name: current
           required: false
           type: boolean
@@ -380,201 +374,6 @@ paths:
                 "$ref": "#/definitions/Status"
               errors:
                 "$ref": "#/definitions/Error"
-  "/v1/light_duty_automobiles.{output_format}":
-    get:
-      summary: Return a full list of light-duty automobiles
-      operationId: getLightDutyAutomobiles
-      parameters:
-        - "$ref": "#/parameters/OutputFormat"
-        - "$ref": "#/parameters/ApiKey"
-        - in: query
-          name: current
-          description: Return only light-duty automobiles with a model year of the current or previous calendar year
-          required: false
-          type: boolean
-        - in: query
-          name: category_id
-          description: Return only light-duty automobiles associated with the vehicle category ID(s) provided.  A single
-            ID or a comma-separated list of multiple IDs may be given
-          type: array
-          collectionFormat: csv
-          items:
-            type: integer
-        - in: query
-          name: fuel_id
-          description:  Return only light-duty automobiles associated with the fuel ID(s) provided.  A single ID or
-            a comma-separated list of multiple IDs may be given
-          type: array
-          collectionFormat: csv
-          items:
-            type: integer
-        - in: query
-          name: model_year
-          description: Return only light-duty automobiles with the model year(s) provided.  A single model year or a
-            comma-separated list of multiple model years may be given
-          type: array
-          collectionFormat: csv
-          items:
-            type: integer
-        - in: query
-          name: manufacturer_id
-          description: Return only light-duty automobiles associated with the manufacturer ID(s) provided.  A single
-            ID or a comma-separated list of multiple IDs may be given
-          type: array
-          collectionFormat: csv
-          items:
-            type: integer
-      responses:
-        '200':
-          description: Successful request
-          schema:
-            type: object
-            properties:
-              metadata:
-                "$ref": "#/definitions/MetadataWithCount"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              result:
-                type: array
-                description: The array of light-duty automobiles returned
-                items:
-                  "$ref": "#/definitions/LightDutyAutomobileResponse"
-  "/v1/light_duty_automobiles/{id}.{output_format}":
-    get:
-      summary: Return a single light-duty automobile given the light-duty automobile's ID
-      operationId: getLightDutyAutomobilesById
-      parameters:
-        - "$ref": "#/parameters/Id"
-        - "$ref": "#/parameters/OutputFormatNoCSV"
-        - "$ref": "#/parameters/ApiKey"
-      responses:
-        '200':
-          description: Successful request
-          schema:
-            properties:
-              metadata:
-                "$ref": "#/definitions/Metadata"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              result:
-                "$ref": "#/definitions/LightDutyAutomobileResponse"
-        '404':
-          description: Not found
-          schema:
-            properties:
-              metadata:
-                "$ref": "#/definitions/Metadata"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              errors:
-                "$ref": "#/definitions/Error"
-  "/v1/light_duty_manufacturers.{output_format}":
-    get:
-      summary: Return a full list of light-duty manufacturers
-      operationId: getLightDutyManufacturers
-      parameters:
-        - "$ref": "#/parameters/OutputFormat"
-        - "$ref": "#/parameters/ApiKey"
-        - in: query
-          name: has_vehicles
-          description: Return only light-duty manufacturers that have associated light-duty vehicles
-          required: false
-          type: boolean
-        - in: query
-          name: current
-          description: Return only light-duty manufacturers that have associated light-duty automobiles with a model
-            year of the current or previous calendar year
-          required: false
-          type: boolean
-      responses:
-        '200':
-          description: Successful request
-          schema:
-            properties:
-              metadata:
-                "$ref": "#/definitions/MetadataWithCount"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              result:
-                type: array
-                description: The array of light-duty manufacturers returned
-                items:
-                  "$ref": "#/definitions/HdLdManufacturerResponse"
-  "/v1/light_duty_manufacturers/{id}.{output_format}":
-    get:
-      summary: Return a single light-duty manufacturer given the light-duty manufacturer's ID
-      operationId: getLightDutyManufacturerById
-      parameters:
-        - "$ref": "#/parameters/Id"
-        - "$ref": "#/parameters/OutputFormatNoCSV"
-        - "$ref": "#/parameters/ApiKey"
-      responses:
-        '200':
-          description: Successful request
-          schema:
-            properties:
-              metadata:
-                "$ref": "#/definitions/Metadata"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              result:
-                "$ref": "#/definitions/HdLdManufacturerResponse"
-        '404':
-          description: Not found
-          schema:
-            properties:
-              metadata:
-                "$ref": "#/definitions/Metadata"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              errors:
-                "$ref": "#/definitions/Error"
-  "/v1/manufacturers.{output_format}":
-    get:
-      summary: Return a full list of manufacturers
-      operationId: getManufacturers
-      parameters:
-        - "$ref": "#/parameters/OutputFormat"
-        - "$ref": "#/parameters/ApiKey"
-        - in: query
-          name: has_vehicles
-          description: Return only manufacturers that have associated light-duty automobiles
-          required: false
-          type: boolean
-        - in: query
-          name: current
-          description: Return only manufacturers that have associated light-duty automobiles with a model
-            year of the current or previous calendar year
-          required: false
-          type: boolean
-      responses:
-        '200':
-          description: Successful request
-          schema:
-            properties:
-              metadata:
-                "$ref": "#/definitions/MetadataWithCount"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              result:
-                type: array
-                description: The array of manufacturers returned
-                items:
-                  "$ref": "#/definitions/ManufacturerResponse"
   "/v1/manufacturers/{id}.{output_format}":
     get:
       summary: Return a single manufacturer given the manufacturer's ID
@@ -610,17 +409,11 @@ paths:
                 "$ref": "#/definitions/Error"
   "/v1/vehicles.{output_format}":
     get:
-      summary: Return a full list of light-duty automobiles and heavy-duty vehicles
+      summary: Return a full list of heavy-duty vehicles
       operationId: getVehicles
       parameters:
         - "$ref": "#/parameters/OutputFormat"
         - "$ref": "#/parameters/ApiKey"
-        - in: query
-          name: current
-          description: Only applies to light-duty automobiles - Return light-duty automobiles with a model year
-            of the current or previous calendar year
-          required: false
-          type: boolean
         - in: query
           name: category_id
           description: Return only vehicles associated with the vehicle category ID(s) provided.  A single
@@ -648,15 +441,6 @@ paths:
           collectionFormat: csv
           items:
             type: integer
-        - in: query
-          name: model_year
-          description:  Only applies to light-duty automobiles - Return light-duty automobiles with the
-            model year(s) provided.  A single model year or a comma-separated list of multiple model years may be given
-          required: false
-          type: array
-          collectionFormat: csv
-          items:
-            type: integer
       responses:
         '200':
           description: Successful request
@@ -677,11 +461,6 @@ paths:
       parameters:
         - "$ref": "#/parameters/OutputFormat"
         - "$ref": "#/parameters/ApiKey"
-        - in: query
-          name: light_duty
-          description: Return only vehicle categories that have associated light-duty automobiles
-          required: false
-          type: boolean
         - in: query
           name: heavy_duty
           description: Return only vehicle categories that have associated heavy-duty vehicles
@@ -835,9 +614,6 @@ definitions:
       has_hybrids?:
         type: boolean
         description: A true or false value to show if the fuel has associated conversion or hybrid systems
-      has_light_duty_automobiles?:
-        type: boolean
-        description: A true or false values to show if the fuel has associated light-duty automobiles
       sort:
         type: integer
         description: Sort order for the fuel
@@ -862,9 +638,6 @@ definitions:
       has_hybrids?:
         type: boolean
         description: A true or false value to show if the fuel has associated conversion or hybrid systems
-      has_light_duty_automobiles?:
-        type: boolean
-        description: A true or false value to show if the fuel has associated light-duty automobiles
       sort:
         type: integer
         description: Sort order for the fuel
@@ -1208,288 +981,10 @@ definitions:
       type:
         type: string
         description: The type of the manufacturer
-  LightDutyAutomobileResponse:
-    description: This is a light-duty automobile
-    properties:
-      id:
-        type: integer
-        description: A unique identifier for the light-duty automobile
-      fuel_id:
-        type: integer
-        description: A unique identifier for the fuel associated with the light-duty automobile
-      phev_type:
-        type: string
-        description: The PHEV type of the light-duty automobile
-      light_duty_fuel_configuration_id:
-        type: integer
-        description: A unique identifier for the light-duty fuel configuration associated
-          with the light-duty automobile
-      light_duty_manufacturer_id:
-        type: integer
-        description: A unique identifier for the light-duty automobile's manufacturer
-      light_duty_category_id:
-        type: integer
-        description: A unique identifier for the light-duty vehicle category associated with the
-          light-duty automobile
-      model:
-        type: string
-        description: The model of the light-duty automobile
-      model_year:
-        type: string
-        description: The model year of the light-duty automobile
-      photo_url:
-        type: string
-        description: The URL for the image file of the light-duty automobile
-      electric_range:
-        type: integer
-        description: The electric-only driving range for the light-duty automobile
-      total_range:
-        type: integer
-        description: The total driving range for the light-duty automobile
-      transmission_type:
-        type: string
-        description: The transmission type of the light-duty automobile
-      engine_type:
-        type: string
-        description: The engine type of the light-duty automobile
-      engine_size:
-        type: string
-        description: The engine size of the light-duty automobile
-      engine_cylinder_count:
-        type: integer
-        description: The engine cylinder count of the light-duty automobile
-      engine_description:
-        type: string
-        description: Additional information about the engine of the light-duty automobile
-      notes:
-        type: string
-        description: Additional information
-      manufacturer_name:
-        type: string
-        description: The name of the light-duty automobile's manufacturer
-      manufacturer_url:
-        type: string
-        description: The URL for the light-duty automobile's website
-      fuel_code:
-        type: string
-        description: A code used to identify the fuel associated with the light-duty automobile
-      fuel_name:
-        type: string
-        description: The name of the fuel associated with the light-duty automobile
-      light_duty_fuel_configuration_name:
-        type: string
-        description: The name of the light-duty fuel configuration associated with the light-duty automobile
-      category_name:
-        type: string
-        description: The name of the light-duty vehicle category associated with the light-duty automobile
-      alternative_fuel_economy_combined:
-        type: string
-        description: The combined alternative fuel economy for the light-duty automobile
-      conventional_fuel_economy_combined:
-        type: string
-        description: The combined conventional fuel economy for the light-duty automobile
-      fuel_economy_estimated_by_manufacturer:
-        type: boolean
-        description: The fuel economy data are estimates from the manufacturer
-      drivetrain:
-        type: string
-        description: The drivetrain of the light-duty automobile
-      charging_rate_level_2:
-        type: string
-        description: The Level 2 charging rate of the light-duty automobile (kW)
-      charging_rate_dc_fast:
-        type: string
-        description: The DC fast charging rate of the light-duty automobile (kW)
-      charging_speed_level_1:
-        type: string
-        description: The Level 1 charging speed of the light-duty automobile (miles added per hour of charging)
-      charging_speed_level_2:
-        type: string
-        description: The Level 2 charging speed of the light-duty automobile (miles added per hour of charging)
-      charging_speed_dc_fast:
-        type: string
-        description: The DC fast charging speed of the light-duty automobile (miles added per hour of charging)
-      battery_voltage:
-        type: integer
-        description: The battery voltage of the light-duty automobile
-      battery_capacity_amp_hours:
-        type: integer
-        description: The battery capacity in amp hours of the light-duty automobile
-      battery_capacity_kwh:
-        type: integer
-        description: The battery capacity in kilowatt-hours of the light-duty automobile
-      seating_capacity:
-        type: string
-        description: The seating capacity of the light-duty automobile
-      alternative_fuel_economy_city:
-        type: string
-        description: The city driving alternative fuel economy for the light-duty automobile
-      alternative_fuel_economy_highway:
-        type: string
-        description: The highway driving alternative fuel economy for the light-duty automobile
-      conventional_fuel_economy_city:
-        type: string
-        description: The city driving conventional fuel economy for the light-duty automobile
-      conventional_fuel_economy_highway:
-        type: string
-        description: The highway driving conventional fuel economy for the light-duty automobile
-      light_duty_emission_certifications:
-        type: array
-        description: A list of light-duty emission certifications associated with the light-duty automobile
-        items:
-          description: This is a light-duty emission certification
-          properties:
-            id:
-              type: integer
-              description: A unique identifier for the light-duty emission certification
-            name:
-              type: string
-              description: The name of the light-duty emission certification
   VehiclesResponse:
     type: object
-    description: Includes both light-duty automobiles and heavy-duty vehicles
+    description: Includes heavy-duty vehicles only
     properties:
-      "0":
-        type: object
-        description: This is a light-duty automobile
-        properties:
-          id:
-            type: integer
-            description: A unique identifier for the light-duty automobile
-          fuel_id:
-            type: integer
-            description: A unique identifier for the fuel associated with the light-duty automobile
-          phev_type:
-            type: string
-            description: The PHEV type of the light-duty automobile
-          light_duty_fuel_configuration_id:
-            type: integer
-            description: A unique identifier for the light-duty fuel configuration associated
-              with the light-duty automobile
-          light_duty_manufacturer_id:
-            type: integer
-            description: A unique identifier for the light-duty automobile's manufacturer
-          light_duty_category_id:
-            type: integer
-            description: A unique identifier for the light-duty vehicle category associated with the
-              light-duty automobile
-          model:
-            type: string
-            description: The model of the light-duty automobile
-          model_year:
-            type: string
-            description: The model year of the light-duty automobile
-          photo_url:
-            type: string
-            description: The URL for the image file of the light-duty automobile
-          electric_range:
-            type: integer
-            description: The electric-only driving range for the light-duty automobile
-          total_range:
-            type: integer
-            description: The total driving range for the light-duty automobile
-          transmission_type:
-            type: string
-            description: The transmission type of the light-duty automobile
-          engine_type:
-            type: string
-            description: The engine type of the light-duty automobile
-          engine_size:
-            type: string
-            description: The engine size of the light-duty automobile
-          engine_cylinder_count:
-            type: integer
-            description: The engine cylinder count of the light-duty automobile
-          engine_description:
-            type: string
-            description: Additional information about the engine of the light-duty automobile
-          notes:
-            type: string
-            description: Additional information
-          manufacturer_name:
-            type: string
-            description: The name of the light-duty automobile's manufacturer
-          manufacturer_url:
-            type: string
-            description: The URL for the light-duty automobile's website
-          fuel_code:
-            type: string
-            description: A code used to identify the fuel associated with the light-duty automobile
-          fuel_name:
-            type: string
-            description: The name of the fuel associated with the light-duty automobile
-          light_duty_fuel_configuration_name:
-            type: string
-            description: The name of the light-duty fuel configuration associated with the light-duty automobile
-          category_name:
-            type: string
-            description: The name of the light-duty vehicle category associated with the light-duty automobile
-          alternative_fuel_economy_combined:
-            type: string
-            description: The combined alternative fuel economy for the light-duty automobile
-          conventional_fuel_economy_combined:
-            type: string
-            description: The combined conventional fuel economy for the light-duty automobile
-          fuel_economy_estimated_by_manufacturer:
-            type: boolean
-            description: The fuel economy data are estimates from the manufacturer
-          drivetrain:
-            type: string
-            description: The drivetrain of the light-duty automobile
-          charging_rate_level_2:
-            type: string
-            description: The Level 2 charging rate of the light-duty automobile (kW)
-          charging_rate_dc_fast:
-            type: string
-            description: The DC fast charging rate of the light-duty automobile (kW)
-          charging_speed_level_1:
-            type: string
-            description: The Level 1 charging speed of the light-duty automobile (miles added per hour of charging)
-          charging_speed_level_2:
-            type: string
-            description: The Level 2 charging speed of the light-duty automobile (miles added per hour of charging)
-          charging_speed_dc_fast:
-            type: string
-            description: The DC fast charging speed of the light-duty automobile (miles added per hour of charging)
-          battery_voltage:
-            type: integer
-            description: The battery voltage of the light-duty automobile
-          battery_capacity_amp_hours:
-            type: integer
-            description: The battery capacity in amp hours of the light-duty automobile
-          battery_capacity_kwh:
-            type: integer
-            description: The battery capacity in kilowatt-hours of the light-duty automobile
-          seating_capacity:
-            type: string
-            description: The seating capacity of the light-duty automobile
-          alternative_fuel_economy_city:
-            type: string
-            description: The city driving alternative fuel economy for the light-duty automobile
-          alternative_fuel_economy_highway:
-            type: string
-            description: The highway driving alternative fuel economy for the light-duty automobile
-          conventional_fuel_economy_city:
-            type: string
-            description: The city driving conventional fuel economy for the light-duty automobile
-          conventional_fuel_economy_highway:
-            type: string
-            description: The highway driving conventional fuel economy for the light-duty automobile
-          light_duty_emission_certifications:
-            type: array
-            description: A list of light-duty emission certifications associated with the light-duty automobile
-            items:
-              description: This is a light-duty emission certification
-              properties:
-                id:
-                  type: integer
-                  description: A unique identifier for the light-duty emission certification
-                name:
-                  type: string
-                  description: The name of the light-duty emission certification
-          class:
-            type: string
-            description: The type of the vehicle
       "1":
         type: object
         description: This is a heavy-duty vehicle
