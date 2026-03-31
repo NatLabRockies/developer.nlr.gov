@@ -1,15 +1,15 @@
 # developer.nlr.gov
 
-Have questions, feedback, or issues with the APIs available at [developer.nlr.gov](https://developer.nlr.gov/)? [Contact us](https://developer.nlr.gov/contact/) or let us know in the [issue tracker](https://github.com/NatLabRockies/developer.nrel.gov/issues).
+Have questions, feedback, or issues with the APIs available at [developer.nlr.gov](https://developer.nlr.gov/)? [Contact us](https://developer.nlr.gov/contact/) or let us know in the [issue tracker](https://github.com/NatLabRockies/developer.nlr.gov/issues).
 
 This repository stores the website content and documentation for [developer.nlr.gov](https://developer.nlr.gov). Contributions are welcome. To submit a change, fork this repo, commit your changes, and send us a [pull request](https://help.github.com/articles/using-pull-requests).
 
 ## Development
 
-The content files to edit are in [`./source`](https://github.com/NatLabRockies/developer.nrel.gov/tree/master/source). To preview your changes you can use the [Middleman](https://middlemanapp.com) preview server. To run Middleman:
+The content files to edit are in [`./source`](https://github.com/NatLabRockies/developer.nlr.gov/tree/master/source). To preview your changes you can use the [Middleman](https://middlemanapp.com) preview server. To run Middleman:
 
 1. Install [Docker](https://www.docker.com/products/docker-desktop/) on your computer.
-2. Checkout the `developer.nlr.gov` repository on your computer (`git clone https://github.com/NatLabRockies/developer.nrel.gov.git`).
+2. Checkout the `developer.nlr.gov` repository on your computer (`git clone https://github.com/NatLabRockies/developer.nlr.gov.git`).
 3. For NLR employees on the NLR network: Add a `docker-compose.override.yml`, with the following contents, but substituting `REPLACE_ME` with the appropriate URL (reach out to a maintainer for this value):
 
     ```yaml
