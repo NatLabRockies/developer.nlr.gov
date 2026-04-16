@@ -22,7 +22,7 @@ domready(() => {
       // If the header on the page is missing IDs, dynamically generate them. Our Markdown content should have auto-generated IDs already, but raw HTML headers may be missing them.
       //
       // This is mostly for parity with the old jQuery plugin we used:
-      // https://github.com/NatLabRockies/developer.nrel.gov/blob/060b09858ed90cc40de083100d8016d097f62339/assets/javascripts/_vendor/jquery.tableofcontents.js#L224-L228
+      // https://github.com/NatLabRockies/developer.nlr.gov/blob/060b09858ed90cc40de083100d8016d097f62339/assets/javascripts/_vendor/jquery.tableofcontents.js#L224-L228
       if (!headerEl.id) {
         headerEl.id = headerEl.innerText.toLowerCase().replace(/[^a-z0-9 -]/gi, '').replace(/ /gi, '-').substr(0, 50);
       }
