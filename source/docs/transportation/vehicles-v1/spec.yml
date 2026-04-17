@@ -374,6 +374,40 @@ paths:
                 "$ref": "#/definitions/Status"
               errors:
                 "$ref": "#/definitions/Error"
+  "/v1/manufacturers.{output_format}":
+    get:
+      summary: Return a full list of manufacturers
+      operationId: getManufacturers
+      parameters:
+        - "$ref": "#/parameters/OutputFormat"
+        - "$ref": "#/parameters/ApiKey"
+        - in: query
+          name: has_vehicles
+          description: Return only manufacturers that have associated light-duty automobiles
+          required: false
+          type: boolean
+        - in: query
+          name: current
+          description: Return only manufacturers that have associated light-duty automobiles with a model
+            year of the current or previous calendar year
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: Successful request
+          schema:
+            properties:
+              metadata:
+                "$ref": "#/definitions/MetadataWithCount"
+              inputs:
+                "$ref": "#/definitions/Inputs"
+              status:
+                "$ref": "#/definitions/Status"
+              result:
+                type: array
+                description: The array of manufacturers returned
+                items:
+                  "$ref": "#/definitions/ManufacturerResponse"
   "/v1/manufacturers/{id}.{output_format}":
     get:
       summary: Return a single manufacturer given the manufacturer's ID
