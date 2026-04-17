@@ -1006,7 +1006,7 @@ definitions:
         description: The type of the manufacturer
   VehiclesResponse:
     type: object
-    description: Includes heavy-duty vehicles only
+    description: Includes heavy-duty vehicles
     properties:
       "1":
         type: object
