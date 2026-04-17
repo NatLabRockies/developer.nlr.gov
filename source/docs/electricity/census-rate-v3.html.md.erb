@@ -3,11 +3,17 @@ title: Utility Rates by Census Region
 summary: Given a location and Census Bureau region level (block, blockgroup, tract),
   return the Census Bureau ID, utility rate and company information.
 url: GET /api/census_rate/v3
-
+deprecated: true
 ---
 
 # <%= current_page.data.title %> <span class="url">(<%= current_page.data.url %>)</span>
 <%= current_page.data.summary %>
+
+<div class="alert alert-danger">
+  <h2>Utility Rates by Census Region API will be shutdown on April 20, 2026</h2>
+  <p>This deprecated API will be shutdown on April 20, 2026 and will not be accessible after that date.</p>
+  <p>For further questions or assistance, <a href="/contact/">contact us</a>.</p>
+</div>
 
 <div class="alert alert-danger" style="margin-top: 10px;">
 NOTE: the utilities and rates data returned by this API is from 2012 and there are currently no plans to update the data in the future.

@@ -1,6 +1,6 @@
 ---
 title: NSRDB Data Query
-summary: "Returns information on the nearest NSRDB datasets for a location, including links for accessing the data. For information about the NSRDB and the datasets available through this service, please visit [https://nsrdb.nrel.gov](https://nsrdb.nrel.gov)."
+summary: "Returns information on the nearest NSRDB datasets for a location, including links for accessing the data. For information about the NSRDB and the datasets available through this service, please visit [https://nsrdb.nlr.gov](https://nsrdb.nlr.gov)."
 detail: "PSM v3:
 \n\n
 The satellite data was created using cloud properties which are generated using the AVHRR Pathfinder Atmospheres-Extended (PATMOS-x) algorithms. Fast all-sky radiation model for solar applications (FARMS) in conjunction with the cloud properties, and aerosol optical depth (AOD) and precipitable water vapor (PWV) from ancillary source are used to estimate DNI and GHI. The direct normal irradiance (DNI) and GHI are computed for clear skies using the REST2 model. For cloud scenes identified by the cloud mask, the FARMS is used to compute the GHI. The DNI for cloud scenes is then computed using the DISC model.
@@ -189,7 +189,7 @@ The response is composed of service-related informational fields and the results
 
 ## Data File Format
 
-Generated data files are formatted in accordance with the Standard Time Series Data File Format. This file format has been developed to support [SAM](https://sam.nrel.gov/) and other NLR models and is documented fully in [this PDF](https://sam.nrel.gov/sites/default/files/content/documents/pdf/wfcsv.pdf). More information on SAM file formats available on [the SAM weather page](https://sam.nrel.gov/weather).
+Generated data files are formatted in accordance with the Standard Time Series Data File Format. This file format has been developed to support [SAM](https://sam.nlr.gov/) and other NLR models and is documented fully in [this PDF](https://sam.nlr.gov/sites/default/files/content/documents/pdf/wfcsv.pdf). More information on SAM file formats available on [the SAM weather page](https://sam.nlr.gov/weather).
 
 ## Examples
 
@@ -228,7 +228,7 @@ Generated data files are formatted in accordance with the Standard Time Series D
         60
       ],
       "displayName": "SUNY International",
-      "metadataLink": "https://nsrdb.nrel.gov/international-datasets",
+      "metadataLink": "https://nsrdb.nlr.gov/international-datasets",
       "name": "suny-international",
       "type": "satellite",
       "links": [
@@ -354,7 +354,7 @@ Generated data files are formatted in accordance with the Standard Time Series D
         <availableInterval type="integer">60</availableInterval>
       </availableIntervals>
       <displayName>SUNY International</displayName>
-      <metadataLink>https://nsrdb.nrel.gov/international-datasets</metadataLink>
+      <metadataLink>https://nsrdb.nlr.gov/international-datasets</metadataLink>
       <name>suny-international</name>
       <type>satellite</type>
       <links type="array">

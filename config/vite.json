@@ -2,7 +2,7 @@
   "all": {
     "publicDir": "tmp/vite",
     "sourceCodeDir": "frontend",
-    "additionalEntrypoints": ["~/{assets,fonts,icons,images,nrel-app-template/img}/**/*"],
+    "additionalEntrypoints": ["~/{assets,fonts,icons,images,nlr-app-template/img}/**/*"],
     "watchAdditionalPaths": []
   },
   "development": {
