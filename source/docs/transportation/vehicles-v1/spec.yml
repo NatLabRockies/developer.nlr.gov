@@ -381,17 +381,6 @@ paths:
       parameters:
         - "$ref": "#/parameters/OutputFormat"
         - "$ref": "#/parameters/ApiKey"
-        - in: query
-          name: has_vehicles
-          description: Return only manufacturers that have associated light-duty automobiles
-          required: false
-          type: boolean
-        - in: query
-          name: current
-          description: Return only manufacturers that have associated light-duty automobiles with a model
-            year of the current or previous calendar year
-          required: false
-          type: boolean
       responses:
         '200':
           description: Successful request
