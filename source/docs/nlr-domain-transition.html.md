@@ -14,7 +14,7 @@ Here is a timeline for this domain change:
 
 - **March 2, 2026:** The new `developer.nlr.gov` domain became available to use and begin switching API calls to the new URLs. Emails were sent to all API key owners having made requests in the past year to announce the domain change.
 - **April 15, 2026:** Additional reminder emails were sent to API key owners that had not transitioned to the new domain yet.
-- **May 1, 2026:** Periodic brownouts (scheduled outages for short durations) will begin where traffic to the old `developer.nrel.gov` domain will return errors with instructions about using the new domain. Traffic already switched to the new `developer.nlr.gov` domain will not be affected.
+- **May 1, 2026:** Periodic brownouts (scheduled outages for short durations) began where traffic to the old `developer.nrel.gov` domain returns errors with instructions about using the new domain. Traffic already switched to the new `developer.nlr.gov` domain is not affected.
     - During each brownout period, API requests will return a `410 Gone` HTTP error with a message about the domain change.
     - Scheduled outages will occur during the following times:
 
