@@ -4,17 +4,17 @@ info:
   version: "1.0"
   description: |
     The Advanced Locomotive Technology and Rail Infrastructure Optimization System (ALTRIOS) is the first fully integrated, open-source software to simulate and optimize the rollout of cost-effective locomotive technologies for de-carbonization.
-    For more information, see: <https://www.nrel.gov/transportation/altrios.html>. 
+    For more information, see: <https://www.nlr.gov/transportation/altrios>.
 
     This API showcases a limited set of features from the full ALTRIOS model.
-    For more complicated analyses, we recommend you utilize the core model at <https://github.com/NREL/altrios>. 
+    For more complicated analyses, we recommend you utilize the core model at <https://github.com/NatLabRockies/altrios>.
 
     **Endpoints**:
     - `/rollout`: Explore a rollout strategy for incorporating battery electric locomotives (BELs) into a fleet of existing diesel locomotives.
     - `/train_simulation`: Simulate a train running over a single route..
 
 servers:
-  - url: https://developer.nrel.gov/api/altrios
+  - url: https://developer.nlr.gov/api/altrios
 paths:
   /train_simulation:
     post:
@@ -237,7 +237,7 @@ components:
         green_house_diff:
           type: number
           description: The difference, as a percent, between the greenhouse gas emissions in the rollout case and the baseline case.
-          example: 30 
+          example: 30
         all_metrics:
           type: array
           items:

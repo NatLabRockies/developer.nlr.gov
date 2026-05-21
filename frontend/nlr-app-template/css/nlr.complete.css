@@ -385,7 +385,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 .card-header {
 	background-color: #fff;
-	border-bottom: 6px solid #E66D0A;
+	border-bottom: 6px solid #DB9728;
 }
 .card-header h2, .card-header h3, .card-header h4, .card-header h5, .card-header h6 {
 	font-size: 1.5em;
@@ -398,11 +398,11 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 .card-header h2 a:hover, .card-header h2 a:focus,
 .card-header h3 a:hover, .card-header h3 a:focus {
-	color:#cc6600;
+	color:#DB9728;
 }
 .card-header.orange {
 	background-color: #fff;
-	border-bottom: 6px solid #E66D0A;
+	border-bottom: 6px solid #DB9728;
 }
 .card-body h2:first-of-type,
 .card-body h3:first-of-type,
@@ -441,7 +441,7 @@ img.social {height:25px; width:auto;}
 	color:#e07700;
 	text-decoration: none;
 }
-.fw-feat-info {padding:1em 1em 0 1em; border-bottom: 6px solid #E66D0A; border-top:none;}
+.fw-feat-info {padding:1em 1em 0 1em; border-bottom: 6px solid #DB9728; border-top:none;}
  .fw-feat-info h2:first-of-type, .fw-feat-info h3:first-of-type, .fw-feat-info h4:first-of-type, .fw-feat-info h5:first-of-type, .fw-feat-info h6:first-of-type {margin:0;}
 
 /* Large Devices, Wide Screens */
@@ -449,7 +449,7 @@ img.social {height:25px; width:auto;}
 	.overlay-text {
 		top: 65px;
 	}
-	.fw-feat-info {border-bottom:none; border-top: 6px solid #E66D0A;}
+	.fw-feat-info {border-bottom:none; border-top: 6px solid #DB9728;}
 }
 
 /* secondary page features */
@@ -470,7 +470,7 @@ img.social {height:25px; width:auto;}
 .orange-card h4 a:hover, .orange-card h4 a:active {color:#0071b8;font-weight:300;}
 .img-feat-orange {
 	background: rgba(255, 255, 255, 0.8);
-	border-bottom: 6px solid #E66D0A;
+	border-bottom: 6px solid #DB9728;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -1593,7 +1593,7 @@ a.singleLightbox:hover {
 	margin-bottom:1em;
 }
 .well h2 {color:#000;}
-.well h2:first-of-type, .well h3:first-of-type, .well h4:first-of-type, .well h5:first-of-type, .well h6:first-of-type {margin-top:0} 
+.well h2:first-of-type, .well h3:first-of-type, .well h4:first-of-type, .well h5:first-of-type, .well h6:first-of-type {margin-top:0}
 div.well p.caption {color: #222;}
 @media (min-width: 768px) {
 	.well.pull-right {
@@ -1720,8 +1720,8 @@ div.well p.caption {color: #222;}
 .icon-block:hover svg path,
 .icon-block:hover h4 a,
 .icon-block:hover {
-	fill: #cc6600;
-	color: #cc6600;
+	fill: #DB9728;
+	color: #DB9728;
 	text-decoration: none;
 }
 .icon-block h4 {margin-top:0.5em;}
@@ -1736,19 +1736,19 @@ div.well p.caption {color: #222;}
 	font-size:1rem
 }
 .icon-block a:link, .icon-block a:visited {color: #0071b8;text-decoration:none;}
-.icon-block a:hover, .icon-block a:active {color: #cc6600;text-decoration:none;}
+.icon-block a:hover, .icon-block a:active {color: #DB9728;text-decoration:none;}
 
 .icon-block:link svg path {
 	fill: #0071b8;
 	color: #0071b8;
 }
 .icon-block:hover svg path, .icon-block:hover .icon-label a {
-	fill: #cc6600;
-	color: #cc6600;
+	fill: #DB9728;
+	color: #DB9728;
 }
 .icon-block:hover .icon-label a {text-decoration:underline;}
 .icon-block:hover svg path.icon-wwu, .icon-block:hover svg path.icon-impacts {
-	stroke:#cc6600;
+	stroke:#DB9728;
 	fill:none;
 }
 

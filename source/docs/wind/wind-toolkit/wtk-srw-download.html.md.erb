@@ -1,6 +1,6 @@
 ---
 title: Wind Toolkit Data - SAM format (srw)
-summary: Collect and download in [SAM (System Advisor Model)](https://sam.nrel.gov/) format a configurable set of data fields from a national collection of wind stations. The Wind Integration National Dataset (WIND) Toolkit is an update and expansion of the Eastern and Western Wind Datasets, and is intended to support the next generation of integration studies. The WIND Toolkit includes meteorological conditions at multiple hub heights for more than 2,488,136 sites in the continental United States for the years 2007–2014.
+summary: Collect and download in [SAM (System Advisor Model)](https://sam.nlr.gov/) format a configurable set of data fields from a national collection of wind stations. The Wind Integration National Dataset (WIND) Toolkit is an update and expansion of the Eastern and Western Wind Datasets, and is intended to support the next generation of integration studies. The WIND Toolkit includes meteorological conditions at multiple hub heights for more than 2,488,136 sites in the continental United States for the years 2007–2014.
 detail: The complete library of wind data can be accessed in bulk at <a href="https://data.openei.org/s3_viewer?bucket=nrel-pds-wtk" target="_blank">https://data.openei.org/s3_viewer?bucket=nrel-pds-wtk</a>.
 url: /api/wind-toolkit/v2/wind/wtk-srw-download
 ---
@@ -170,7 +170,7 @@ C, atm, m/s, Degrees
 
 <h2 id="rate-limits">Rate Limits</h2>
 
-Rate limits for this application are significantly less than the [standard rate limits](/docs/rate-limits){:target="_blank"} for developer.nrel.gov. This decrease in the limit is required as the data provided through this service is significantly more computationally intensive to generate and provide. These rate limits are carefully calculated to allow all users the maximum throughput that our servers can sustain.
+Rate limits for this application are significantly less than the [standard rate limits](/docs/rate-limits){:target="_blank"} for developer.nlr.gov. This decrease in the limit is required as the data provided through this service is significantly more computationally intensive to generate and provide. These rate limits are carefully calculated to allow all users the maximum throughput that our servers can sustain.
 
 There are several levels of rate limiting for this service. The first limit determines how many requests a given user can make per 24 hour period. For requests utilizing the <em>.csv</em> format this rate limit is set at 10,000 a day at a frequency of no more than 1 per second. For all other requests this limit is set at 2000 requests per day at a frequency of no more than 1 every 2 seconds.
 
@@ -182,7 +182,7 @@ For some tips and tricks to maximize data downloads please read the guide [here]
 
 <h2 id="contacts">Contact</h2>
 
-<p>For questions about the API or the data models please contact <a href="mailto:WindToolkit@nrel.gov">WindToolkit@nrel.gov</a></p>
+<p>For questions about the API or the data models please contact <a href="mailto:wrdb@nlr.gov">wrdb@nlr.gov</a></p>
 
 <h2 id="errors">Errors</h2>
 

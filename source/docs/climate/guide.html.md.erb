@@ -39,7 +39,7 @@ In cases where a very large WKT value is required, e.g. downloading the maximum 
 ```python
 import requests
 
-url = "http://developer.nrel.gov/api/climate/ncdb/v2/climate/ncdb-4km-Hourly-CONUS-v1-0-0-RCP8-5-download.json?api_key=yourapikeygoeshere"
+url = "https://developer.nlr.gov/api/climate/ncdb/v2/climate/ncdb-4km-Hourly-CONUS-v1-0-0-RCP8-5-download.json?api_key=yourapikeygoeshere"
 
 payload = "names=2012&leap_day=false&interval=60&utc=false&full_name=Honored%2BUser&email=honored.user%40gmail.com&affiliation=NREL&mailing_list=true&reason=Academic&attributes=dhi%2Cdni%2Cwind_speed&wkt=MULTIPOINT(-106.22%2032.9741%2C-106.18%2032.9741%2C-106.1%2032.9741)"
 
@@ -56,9 +56,9 @@ print(response.text)
 And a CURL example of the same
 
 ```shell
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Cache-Control: no-cache" -d 'names=2009&leap_day=false&interval=60&utc=false&full_name=Honored%2BUser&email=user@company.com&affiliation=NREL&mailing_list=true&reason=Academic&attributes=dhi%2Cdni%2Cwind_speed&wkt=MULTIPOINT(-106.22 32.9741%2C-106.18 32.9741%2C-106.1 32.9741%2C-106.06 32.9741)' "http://developer.nrel.gov/api/solar/psm3-5min-download.json?api_key=yourapikeygoeshere"
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Cache-Control: no-cache" -d 'names=2009&leap_day=false&interval=60&utc=false&full_name=Honored%2BUser&email=user@company.com&affiliation=NREL&mailing_list=true&reason=Academic&attributes=dhi%2Cdni%2Cwind_speed&wkt=MULTIPOINT(-106.22 32.9741%2C-106.18 32.9741%2C-106.1 32.9741%2C-106.06 32.9741)' "https://developer.nlr.gov/api/solar/psm3-5min-download.json?api_key=yourapikeygoeshere"
 ```
 
 <h2 id="contacts">Contact</h2>
 
-<p>For questions about the API or the data models please contact <a href="mailto:nsrdb@nrel.gov">nsrdb@nrel.gov</a></p>
+<p>For questions about the API or the data models please contact <a href="mailto:nsrdb@nlr.gov">nsrdb@nlr.gov</a></p>

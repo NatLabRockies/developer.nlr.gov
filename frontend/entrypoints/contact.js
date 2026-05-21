@@ -33,7 +33,7 @@ formEl.addEventListener("submit", (event) => {
   }, 0);
 
   const hostname = window.location.hostname;
-  const apiHost = (hostname === 'developer.nrel.gov') ? 'developer.nrel.gov' : 'devstage.nrel.gov';
+  const apiHost = (hostname === 'developer.nlr.gov') ? 'developer.nlr.gov' : 'devstage.nlr.gov';
 
   return fetch(`https://${apiHost}/api/contactor/v1.json?` + new URLSearchParams({
     api_key: options.apiKey,

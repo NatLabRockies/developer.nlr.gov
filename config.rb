@@ -179,7 +179,7 @@ helpers do
   end
 
   def make_request(path, params = {country: "all", api_key: ENV["DOCS_API_KEY"]})
-    MultiJson.load(RestClient.get("https://developer.nrel.gov/api/alt-fuel-stations/v1/#{path}.json", params: params))
+    MultiJson.load(RestClient.get("https://developer.nlr.gov/api/alt-fuel-stations/v1/#{path}.json", params: params))
   end
 end
 

@@ -16,23 +16,35 @@
       NLR: Developer Network
     </title>
 
-    <link rel="canonical" href="https://developer.nrel.gov<%= current_page.url %>" />
+    <link rel="canonical" href="https://developer.nlr.gov<%= current_page.url %>" />
 
     <%= vite_stylesheet_tag("all.scss") %>
     <%= partial("layouts/analytics") %>
     <%= vite_javascript_tag("all") %>
 
-    <link rel="shortcut icon" type="image/x-icon" href="<%= vite_asset_path "nrel-app-template/img/favicon.ico" %>">
-    <link rel="apple-touch-icon" href="<%= vite_asset_path "nrel-app-template/img/touch-icon-iphone.png" %>">
-    <link rel="apple-touch-icon" sizes="72x72" href="<%= vite_asset_path "nrel-app-template/img/touch-icon-ipad.png" %>">
-    <link rel="apple-touch-icon" sizes="114x114" href="<%= vite_asset_path "nrel-app-template/img/touch-icon-iphone-retina.png" %>">
-    <link rel="apple-touch-icon" sizes="144x144" href="<%= vite_asset_path "nrel-app-template/img/touch-icon-ipad-retina.png" %>">
+    <link rel="shortcut icon" type="image/x-icon" href="<%= vite_asset_path "nlr-app-template/img/favicon.ico" %>">
+    <link rel="apple-touch-icon" href="<%= vite_asset_path "nlr-app-template/img/touch-icon-iphone.png" %>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<%= vite_asset_path "nlr-app-template/img/touch-icon-ipad.png" %>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<%= vite_asset_path "nlr-app-template/img/touch-icon-iphone-retina.png" %>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<%= vite_asset_path "nlr-app-template/img/touch-icon-ipad-retina.png" %>">
   </head>
   <body class="<%= page_classes %>">
     <%= partial("layouts/noscript_analytics") %>
     <%= partial("layouts/header") %>
     <main id="content" class="container-xl">
       <%= partial("layouts/breadcrumbs") %>
+
+      <% unless current_page.data.hide_domain_transition_alert %>
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+          <i class="fa-solid fa-triangle-exclamation bi flex-shrink-0 me-2"></i>
+          <p class="m-0 lh-sm">
+            <strong>Existing API Users:</strong> Update any <code>developer.nrel.gov</code> references in your code to <code>developer.nlr.gov</code>. The previous <code>developer.nrel.gov</code> domain will experience scheduled service disruptions beginning <strong>May 1, 2026</strong>, and it will be shut down on <strong>May 29, 2026</strong>.
+            <% unless current_page.data.hide_domain_transition_link %>
+              Learn more about the <%= link_to("domain transition", "/docs/nlr-domain-transition.html") %>.
+            <% end %>
+          </p>
+        </div>
+      <% end %>
 
       <%= yield %>
 

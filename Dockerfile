@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/ruby:3.4-slim-bookworm
+FROM public.ecr.aws/docker/library/ruby:3.4-slim-trixie
 
 ENV \
   BUNDLE_JOBS=20 \
@@ -23,7 +23,7 @@ RUN set -x && \
   fi
 
 # NodeJS and pnpm
-ARG NODEJS_MAJOR_VERSION=22
+ARG NODEJS_MAJOR_VERSION=24
 RUN set -x && \
   version="node_${NODEJS_MAJOR_VERSION}.x" && \
   distro=$(. /etc/os-release && echo "$VERSION_CODENAME") && \

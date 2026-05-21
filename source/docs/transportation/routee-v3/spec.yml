@@ -1,10 +1,10 @@
 openapi: 3.0.0
 info:
   title: RouteE API
-  description: The Route Energy Prediction Model (RouteE) predicts the energy consumption of a given vehicle over a link or sequence of links (route) in a road network. These API endpoints can be used to get single vehicle link or route energy estimates (`/powertrain/route`) and energy aware routes between an origin and destination for a specific vehicle (`/compass/route`). For more on RouteE, please visit <https://www.nrel.gov/transportation/route-energy-prediction-model.html>.
+  description: The Route Energy Prediction Model (RouteE) predicts the energy consumption of a given vehicle over a link or sequence of links (route) in a road network. These API endpoints can be used to get single vehicle link or route energy estimates (`/powertrain/route`) and energy aware routes between an origin and destination for a specific vehicle (`/compass/route`). For more on RouteE, please visit <https://www.nlr.gov/transportation/route-energy-prediction-model>.
   version: "3.0"
 servers:
-  - url: https://developer.nrel.gov/api/routee/v3
+  - url: https://developer.nlr.gov/api/routee/v3
 paths:
   /powertrain/route:
     post:
@@ -104,7 +104,7 @@ components:
           format: float
           description: The grade of the link in percent form (i.e. 5% grade)
           nullable: true
-          example: 5 
+          example: 5
     PowertrainRequest:
       type: object
       required: [powertrain_model, links]
@@ -160,7 +160,7 @@ components:
           type: number
           format: float
           description: The longitude of the origin
-          example: -105.167987 
+          example: -105.167987
         destination_lat:
           type: number
           format: float
@@ -170,7 +170,7 @@ components:
           type: number
           format: float
           description: The longitude of the destination
-          example: -105.280362 
+          example: -105.280362
         model_name:
           type: string
           description: The name of the RouteE Powertrain vehicle model to use for the energy estimate

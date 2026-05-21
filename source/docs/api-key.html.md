@@ -15,7 +15,7 @@ After [signing up](/signup), you'll be given your own, unique API key. This 40 c
 To use your key, simply pass the key as a URL query parameter when making web service requests. For example:
 
 ```
-GET https://developer.nrel.gov/api/alt-fuel-stations/v1.json?limit=1&api_key=YOUR_KEY_HERE
+GET https://developer.nlr.gov/api/alt-fuel-stations/v1.json?limit=1&api_key=YOUR_KEY_HERE
 ```
 
 ## Ways to Pass Your API Key
@@ -27,7 +27,7 @@ Your API key may be passed to the service in a few different ways. Pick which ev
 Pass the API key into the `X-Api-Key` header:
 
 ```sh
-curl -H 'X-Api-Key: DEMO_KEY' 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json?limit=1'
+curl -H 'X-Api-Key: DEMO_KEY' 'https://developer.nlr.gov/api/alt-fuel-stations/v1.json?limit=1'
 ```
 
 ### GET Query Parameter
@@ -35,7 +35,7 @@ curl -H 'X-Api-Key: DEMO_KEY' 'https://developer.nrel.gov/api/alt-fuel-stations/
 Pass the API key into the `api_key` GET query string parameter:
 
 ```sh
-curl 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json?limit=1&api_key=YOUR_KEY_HERE'
+curl 'https://developer.nlr.gov/api/alt-fuel-stations/v1.json?limit=1&api_key=YOUR_KEY_HERE'
 ```
 
 *Note:* The GET query parameter may be used for non-GET requests (such as POST and PUT).
@@ -45,5 +45,5 @@ curl 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json?limit=1&api_key=Y
 As an alternative, pass the API key as the username (with an empty password) using HTTP basic authentication:
 
 ```sh
-curl 'https://YOUR_KEY_HERE@developer.nrel.gov/api/alt-fuel-stations/v1.json?limit=1'
+curl 'https://YOUR_KEY_HERE@developer.nlr.gov/api/alt-fuel-stations/v1.json?limit=1'
 ```

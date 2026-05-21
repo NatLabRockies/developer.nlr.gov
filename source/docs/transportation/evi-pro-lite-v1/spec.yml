@@ -7,7 +7,7 @@ info:
 
     EVI-Pro Lite is a simplified version of the Electric Vehicle Infrastructure Projection Tool (EVI-Pro). EVI-Pro uses real-world travel data from mass market consumers to estimate future requirements for residential, workplace, and public charging under a variety of scenarios. For more information regarding EVI-Pro Lite, see the [methodology and assumptions page](https://afdc.energy.gov/evi-pro-lite/load-profile/assumptions).
 
-    While the EVI-Pro Lite API generates 24-hr load profiles for representative weekdays and weekends, some users may find it helpful to concatenate daily profiles into an annual profile. To facilitate this process, considering leveraging this Python script available on <a href="https://github.com/NREL/EVI-Pro-Lite">GitHub</a>.
+    While the EVI-Pro Lite API generates 24-hr load profiles for representative weekdays and weekends, some users may find it helpful to concatenate daily profiles into an annual profile. To facilitate this process, considering leveraging this Python script available on <a href="https://github.com/NatLabRockies/EVI-Pro-Lite">GitHub</a>.
 schemes:
   - https
 basePath: /api/evi-pro-lite/v1

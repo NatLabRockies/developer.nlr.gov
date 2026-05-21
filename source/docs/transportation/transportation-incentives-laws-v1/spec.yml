@@ -27,7 +27,6 @@ paths:
         default: json
         enum:
           - json
-          - xml
           - csv
       - in: query
         description: API Key
@@ -155,7 +154,6 @@ paths:
         default: json
         enum:
           - json
-          - xml
       - in: query
         description: API Key
         name: api_key
@@ -198,7 +196,6 @@ paths:
         default: json
         enum:
           - json
-          - xml
       - in: query
         description: API Key
         name: api_key
@@ -233,7 +230,6 @@ paths:
         default: json
         enum:
           - json
-          - xml
       - in: query
         description: API Key
         name: api_key

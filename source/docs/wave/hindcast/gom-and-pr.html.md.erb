@@ -201,14 +201,14 @@ The response is composed of service-related informational fields and the results
 
 ## Data File Format
 
-Generated data files are formatted in accordance with the Standard Time Series Data File Format. This file format has been developed to support [SAM](https://sam.nrel.gov/) and other NLR models and is documented fully in [this PDF](https://sam.nrel.gov/sites/default/files/content/documents/pdf/wfcsv.pdf). More information on SAM file formats available on [the SAM weather page](https://sam.nrel.gov/weather).
+Generated data files are formatted in accordance with the Standard Time Series Data File Format. This file format has been developed to support [SAM](https://sam.nlr.gov/) and other NLR models and is documented fully in [this PDF](https://sam.nlr.gov/sites/default/files/content/documents/pdf/wfcsv.pdf). More information on SAM file formats available on [the SAM weather page](https://sam.nlr.gov/weather).
 
 ## Examples
 Examples may not reflect the full range of possible options for this dataset.
 
 ### JSON Output Format
 
-<div class="doc-example-url"><code>GET <%= current_page.data.url %>.json?email=paul.edwards@nrel.gov&wkt=POINT(-67.97 17.62)&attributes=direction_of_maximum_directionally_resolved_wave_power&names=2019,2020&interval=180</code></div>
+<div class="doc-example-url"><code>GET <%= current_page.data.url %>.json?email=user@company.com&wkt=POINT(-67.97 17.62)&attributes=direction_of_maximum_directionally_resolved_wave_power&names=2019,2020&interval=180</code></div>
 
 ```JSON
 {
@@ -218,7 +218,7 @@ Examples may not reflect the full range of possible options for this dataset.
             "0": ".json"
         },
         "query": {
-            "email": "paul.edwards@nrel.gov",
+            "email": "user@company.com",
             "wkt": "POINT(-67.97 17.62)",
             "attributes": "direction_of_maximum_directionally_resolved_wave_power",
             "names": "2019,2020",
@@ -233,8 +233,8 @@ Examples may not reflect the full range of possible options for this dataset.
     },
     "status": 200,
     "outputs": {
-        "message": "File generation in progress. An email will be sent to paul.edwards@nrel.gov when the download is ready.",
-        "downloadUrl": "https://mapfiles.nrel.gov/data/wave/7c1320137c7c8f98e96af4781903419f.zip"
+        "message": "File generation in progress. An email will be sent to user@company.com when the download is ready.",
+        "downloadUrl": "https://mapfiles.nlr.gov/data/wave/7c1320137c7c8f98e96af4781903419f.zip"
     },
     "errors": []
 }
@@ -243,7 +243,7 @@ Examples may not reflect the full range of possible options for this dataset.
 ### CSV Output Format
 Direct streaming of CSV data is supported for single location, single year only. The following response example is truncated after the first few rows of data.
 
-<div class="doc-example-url"><code>GET <%= current_page.data.url %>.csv?email=paul.edwards@nrel.gov&wkt=POINT(-67.97 17.62)&attributes=energy_period,spectral_width&names=2020&interval=180</code></div>
+<div class="doc-example-url"><code>GET <%= current_page.data.url %>.csv?email=user@company.com&wkt=POINT(-67.97 17.62)&attributes=energy_period,spectral_width&names=2020&interval=180</code></div>
 
 ```csv
 Source,Location ID,Jurisdiction,Latitude,Longitude,Time Zone,Local Time Zone,Distance to Shore,Water Depth,Direction of Maximum Directionally Resolved Wave Power,Directionality Coefficient,Energy Period,Mean Absolute Period,Mean Wave Direction,Mean Zero-Crossing Period,Omnidirectional Wave Power,Peak Period,Peak Wave Direction,Significant Wave Height,Spectral Width,Version
@@ -261,9 +261,9 @@ Year,Month,Day,Hour,Minute,Energy Period,Spectral Width
 ```python
 import requests
 
-url = "http://developer.nrel.gov<%= current_page.data.url %>.json?api_key=yourapikeygoeshere"
+url = "https://developer.nlr.gov<%= current_page.data.url %>.json?api_key=yourapikeygoeshere"
 
-payload = "api_key={{API_KEY}}&email=paul.edwards@nrel.gov&wkt=POINT(-67.97 17.62)&attributes=energy_period,spectral_width&names=2020&interval=180"
+payload = "api_key={{API_KEY}}&email=user@company.com&wkt=POINT(-67.97 17.62)&attributes=energy_period,spectral_width&names=2020&interval=180"
 
 headers = {
     'content-type': "application/x-www-form-urlencoded",
@@ -277,7 +277,7 @@ print(response.text)
 
 <h2 id="rate-limits">Rate Limits</h2>
 
-Rate limits for this application are significantly less than the [standard rate limits](/docs/rate-limits){:target="_blank"} for developer.nrel.gov. This decrease in the limit is required as the data provided through this service is significantly more computationally intensive to generate and provide. These rate limits are carefully calculated to allow all users the maximum throughput that our servers can sustain.
+Rate limits for this application are significantly less than the [standard rate limits](/docs/rate-limits){:target="_blank"} for developer.nlr.gov. This decrease in the limit is required as the data provided through this service is significantly more computationally intensive to generate and provide. These rate limits are carefully calculated to allow all users the maximum throughput that our servers can sustain.
 
 There are several levels of rate limiting for this service. The first limit determines how many requests a given user can make per 24 hour period. For requests utilizing the <em>.csv</em> format this rate limit is set at 10000 a day at a frequency of no more than 1 per second. For all other requests this limit is set at 2000 requests per day at a frequency of no more than 1 every 2 seconds.
 
@@ -289,7 +289,7 @@ For some tips and tricks to maximize data downloads please read the guide [here]
 
 <h2 id="contacts">Contact</h2>
 
-<p>For questions about the API or the data models please contact <a href="mailto:marineresource@nrel.gov">marineresource@nrel.gov</a></p>
+<p>For questions about the API or the data models please contact <a href="mailto:marineresource@nlr.gov">marineresource@nlr.gov</a></p>
 
 <h2 id="errors">Errors</h2>
 

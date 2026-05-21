@@ -1,7 +1,7 @@
 ---
 title: "CONUS 2006-2100 60-minute, 4km, RCP4.5"
 summary: "The National Climate Database (NCDB) is a high-resolution, bias-corrected climate dataset including global horizontal irradiance, direct normal irradiance, and diffuse horizontal irradiance, as well as other meteorological data."
-detail: "The NCDB is developed using a statistical downscaling approach with Regional Climate Model (RCM)-based climate projections obtained from the North American Coordinated Regional Climate Downscaling Experiment (NA-CORDEX; https://na-cordex.org/). 0.22⁰ daily climate projections simulated by the Canadian Regional Climate Model 4 (CanRCM4) forced by the second-generation Canadian Earth System Model (CanESM2) for two Representative Concentration Pathways (RCP4.5 or moderate emissions scenario and RCP8.5 or highest baseline emission scenario) are selected as inputs to the statistical downscaling models. The National Solar Radiation Database (NSRDB) (Sengupta et al. 2018) is used to build and calibrate the statistical model. For more details please visit [the NCDB](https://climate.nrel.gov)."
+detail: "The NCDB is developed using a statistical downscaling approach with Regional Climate Model (RCM)-based climate projections obtained from the North American Coordinated Regional Climate Downscaling Experiment (NA-CORDEX; https://na-cordex.org/). 0.22⁰ daily climate projections simulated by the Canadian Regional Climate Model 4 (CanRCM4) forced by the second-generation Canadian Earth System Model (CanESM2) for two Representative Concentration Pathways (RCP4.5 or moderate emissions scenario and RCP8.5 or highest baseline emission scenario) are selected as inputs to the statistical downscaling models. The National Solar Radiation Database (NSRDB) (Sengupta et al. 2018) is used to build and calibrate the statistical model. For more details please visit [the NCDB](https://climate.nlr.gov)."
 url: /api/climate/ncdb/v2/climate/ncdb-4km-Hourly-CONUS-v1-0-0-RCP4-5-download
 ---
 
@@ -201,7 +201,7 @@ The response is composed of service-related informational fields and the results
 
 ## Data File Format
 
-Generated data files are formatted in accordance with the Standard Time Series Data File Format. This file format has been developed to support [SAM](https://sam.nrel.gov/) and other NLR models and is documented fully in [this PDF](https://sam.nrel.gov/sites/default/files/content/documents/pdf/wfcsv.pdf). More information on SAM file formats available on [the SAM weather page](https://sam.nrel.gov/weather).
+Generated data files are formatted in accordance with the Standard Time Series Data File Format. This file format has been developed to support [SAM](https://sam.nlr.gov/) and other NLR models and is documented fully in [this PDF](https://sam.nlr.gov/sites/default/files/content/documents/pdf/wfcsv.pdf). More information on SAM file formats available on [the SAM weather page](https://sam.nlr.gov/weather).
 
 ## Examples
 Examples may not reflect this specific dataset.
@@ -231,7 +231,7 @@ Examples may not reflect this specific dataset.
     "status": 200,
     "outputs": {
         "message": "File generation in progress. An email will be sent to user@company.com when the download is ready.",
-        "downloadUrl": "https://mapfiles.nrel.gov/data/wind/ebc9bbbc34f91c65ac50707d43176c6c.zip"
+        "downloadUrl": "https://mapfiles.nlr.gov/data/wind/ebc9bbbc34f91c65ac50707d43176c6c.zip"
     },
     "errors": []
 }
@@ -262,7 +262,7 @@ Year,Month,Day,Hour,Minute,wind direction at 180m (deg)
 ```python
 import requests
 
-url = "http://developer.nrel.gov<%= current_page.data.url %>.json?api_key=yourapikeygoeshere"
+url = "https://developer.nlr.gov<%= current_page.data.url %>.json?api_key=yourapikeygoeshere"
 
 payload = "api_key={{API_KEY}}&names=2017&utc=true&leap_day=true&interval=60&email=user@company.com&wkt=POINT(-179.99 -15.94)"
 
@@ -278,7 +278,7 @@ print(response.text)
 
 <h2 id="rate-limits">Rate Limits</h2>
 
-Rate limits for this application are significantly less than the [standard rate limits](/docs/rate-limits){:target="_blank"} for developer.nrel.gov. This decrease in the limit is required as the data provided through this service is significantly more computationally intensive to generate and provide. These rate limits are carefully calculated to allow all users the maximum throughput that our servers can sustain.
+Rate limits for this application are significantly less than the [standard rate limits](/docs/rate-limits){:target="_blank"} for developer.nlr.gov. This decrease in the limit is required as the data provided through this service is significantly more computationally intensive to generate and provide. These rate limits are carefully calculated to allow all users the maximum throughput that our servers can sustain.
 
 There are several levels of rate limiting for this service. The first limit determines how many requests a given user can make per 24 hour period. For requests utilizing the <em>.csv</em> format this rate limit is set at 10,000 a day at a frequency of no more than 1 per second. For all other requests this limit is set at 2000 requests per day at a frequency of no more than 1 every 2 seconds.
 
@@ -286,11 +286,11 @@ Secondly each user is limited to 20 in-flight requests at any given time.
 
 In addition, the service has a fail-safe mechanism to prevent significant performance decreases that can be caused by unexpectedly high usage of the service. This limit will cause the service to stop accepting requests when the queue reaches a point where additional requests will significantly lower server performance. When this limit is hit, the service will error with a message describing that the request queue is full.
 
-For some tips and tricks to maximize data downloads please read the guide [here](/docs/climate/ncdb/guide/).
+For some tips and tricks to maximize data downloads please read the guide [here](/docs/climate/guide/).
 
 <h2 id="contacts">Contact</h2>
 
-<p>For questions about the API or the data models please contact <a href="mailto:nsrdb@nrel.gov">nsrdb@nrel.gov</a></p>
+<p>For questions about the API or the data models please contact <a href="mailto:nsrdb@nlr.gov">nsrdb@nlr.gov</a></p>
 
 <h2 id="errors">Errors</h2>
 
