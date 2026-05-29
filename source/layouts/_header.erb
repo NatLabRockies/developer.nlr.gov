@@ -8,7 +8,7 @@
 
         <div class="col-md-6 col-xl-4 order-md-2 text-center text-md-end">
           <a class="logo-img" href="https://www.nlr.gov">
-            <img src="<%= vite_asset_path "nrel-app-template/img/nlr.webp" %>" alt="National Laboratory of the Rockies">
+            <img src="<%= vite_asset_path "nlr-app-template/img/nlr.svg" %>" alt="National Laboratory of the Rockies">
           </a>
 
           <!-- mobile search button -->
@@ -28,19 +28,19 @@
                       <form
                           method="get"
                           class="site-searchbar-form form-inline ThunderstoneForm"
-                          action="https://search4.nrel.gov/texis/search/"
+                          action="https://search4.nlr.gov/texis/search/"
                           id="ThunderstoneSearchFormMobile">
 
-                        <input type="hidden" name="pr" value="metanrel">
+                        <input type="hidden" name="pr" value="metanlr">
                         <div class="form-group">
-                          <label for="querymobile" class="visually-hidden">Search site</label>
+                          <label for="querymobile" class="visually-hidden">Search NLR.gov</label>
                           <input
                               type="search"
                               id="querymobile" name="query"
                                                maxlength="2047"
-                                               placeholder="Search site"
+                                               placeholder="Search NLR.gov"
                                                class="form-control"
-                                               aria-label="Search site">
+                                               aria-label="Search NLR.gov">
                           <button type="submit" class="btn btn-default">Search</button>
                         </div>
                       </form>
@@ -99,19 +99,19 @@
               <form
                   method="get"
                   class="site-searchbar-form form-inline ThunderstoneForm"
-                  action="https://search4.nrel.gov/texis/search/"
+                  action="https://search4.nlr.gov/texis/search/"
                   id="ThunderstoneSearchForm">
 
-                <input type="hidden" name="pr" value="metanrel">
+                <input type="hidden" name="pr" value="metanlr">
                 <div class="form-group">
-                  <label for="query" class="visually-hidden">Search site</label>
+                  <label for="query" class="visually-hidden">Search NLR.gov</label>
                   <input
                       type="search"
                       id="query" name="query"
                                  maxlength="2047"
-                                 placeholder="Search site"
+                                 placeholder="Search NLR.gov"
                                  class="form-control"
-                                 aria-label="Search site">
+                                 aria-label="Search NLR.gov">
                   <button type="submit" class="btn btn-default">Search</button>
                 </div>
               </form>

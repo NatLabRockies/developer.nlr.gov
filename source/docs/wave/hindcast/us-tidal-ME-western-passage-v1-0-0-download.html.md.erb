@@ -1,0 +1,306 @@
+---
+title: High Resolution Tidal Hindcast - Western Passage, ME
+summary: Collect and download as CSV a configurable subset of the high resolution tidal hindcast dataset for the Western Passage, ME region.
+detail: "<p>Source: <a href='https://mhkdr.openei.org/submissions/632' target='_blank' rel='noopener noreferrer'>High Resolution Tidal Hindcast Data Repository</a>, funded by <a href='https://www.energy.gov/' target='_blank' rel='noopener noreferrer'>U.S. Department of Energy</a> <a href='https://www.energy.gov/cmei/water/hydropower-and-hydrokinetic-office' target='_blank' rel='noopener noreferrer'>Hydropower and Hydrokinetic Office</a>. Modeled by <a href='https://www.pnnl.gov/projects/ocean-dynamics-modeling' target='_blank' rel='noopener noreferrer'>Pacific Northwest National Laboratory Ocean Dynamics and Modeling Group</a>; standardized and released by <a href='https://www.nlr.gov/water/resource-characterization' target='_blank' rel='noopener noreferrer'>National Laboratory of the Rockies Marine Energy Resource Characterization Team</a>. See <a href='https://us-marine-energy-resource.github.io' target='_blank' rel='noopener noreferrer'>Tidal Hindcast Dataset Documentation</a> for methodology, citations, and full dataset access. See the <a href='https://maps-dev.nrel.gov/marine-energy-atlas/data-viewer/data-library/layers?vL=692dbb4fdefeab04b9471e42' target='_blank' rel='noopener noreferrer'>Marine Energy Atlas Data Viewer</a> to explore the data visually and download. Contact <a href='mailto:marineresource@nlr.gov'>marineresource@nlr.gov</a> with questions.</p><p>This API is capable of creating very large downloadable archives. Unlike a typical API, the response to this provides a request acknowledgement. The real work of creating the requested downloadable archive will continue to run on the server side. When complete, and email will be sent to the email address provided in the initial request with a link to a file to download. In addition to this two step workflow, there is also an option for users who wish to download a single CSV file in direct response to an API request. The <em>.csv</em> format may be used to download a CSV directly. This feature is restricted to use with only a single POINT, for a single YEAR at a time.</p>"
+url: /api/wave/v2/wave/us-tidal-ME-western-passage-v1-0-0-download
+---
+
+# <%= current_page.data.title %> <span class="url">(<%= current_page.data.url %>)</span>
+<%= current_page.data.summary %>
+
+<%= current_page.data.detail %>
+
+<ul id="toc"></ul>
+
+## Request URL
+
+<pre>GET|POST <%= current_page.data.url %><em>.format?parameters</em></pre>
+
+## Request Parameters
+_NOTE: when using POST to submit a request the api_key must still be included as a query parameter in the url. All other parameters may be included in a POST request as part of the payload._
+
+<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+  <thead>
+    <tr>
+      <th class="doc-parameters-name" scope="col">Parameter</th>
+      <th class="doc-parameters-required" scope="col">Required</th>
+      <th class="doc-parameters-value" scope="col">Value</th>
+      <th class="doc-parameters-description" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="doc-parameter-name" scope="row">api_key</th>
+      <td class="doc-parameter-required">Yes</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> string</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> None</div>
+      </td>
+      <td class="doc-parameter-description">
+        <p>Your developer API key. See <a href="/docs/api-key/">API keys</a> for more information.</p>
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">wkt</th>
+      <td class="doc-parameter-required">Yes</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> well-known text string</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> None</div>
+      </td>
+      <td class="doc-parameter-description">
+        A well-known text (WKT) representation of the geometry for which to extract data. May be a point, multipoint, or polygon geometry. When a point is passed the site nearest to that point is used. When a multipoint is passed the site nearest each point is used. This can be useful for downloading multiple sites in a single request when those sites are geographically distant from each other. When a polygon is passed all sites that intersect with the given polygon are used.
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">attributes</th>
+      <td class="doc-parameter-required">No</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> comma delimited string array</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> Returns ALL</div>
+        <div class="doc-parameter-value-field"><strong>Options:</strong> <em>vap_sea_floor_depth, vap_sea_water_power_density_sigma_layer_01, vap_sea_water_power_density_sigma_layer_02, vap_sea_water_power_density_sigma_layer_03, vap_sea_water_power_density_sigma_layer_04, vap_sea_water_power_density_sigma_layer_05, vap_sea_water_power_density_sigma_layer_06, vap_sea_water_power_density_sigma_layer_07, vap_sea_water_power_density_sigma_layer_08, vap_sea_water_power_density_sigma_layer_09, vap_sea_water_power_density_sigma_layer_10, vap_sea_water_speed_sigma_layer_01, vap_sea_water_speed_sigma_layer_02, vap_sea_water_speed_sigma_layer_03, vap_sea_water_speed_sigma_layer_04, vap_sea_water_speed_sigma_layer_05, vap_sea_water_speed_sigma_layer_06, vap_sea_water_speed_sigma_layer_07, vap_sea_water_speed_sigma_layer_08, vap_sea_water_speed_sigma_layer_09, vap_sea_water_speed_sigma_layer_10, vap_sea_water_to_direction_sigma_layer_01, vap_sea_water_to_direction_sigma_layer_02, vap_sea_water_to_direction_sigma_layer_03, vap_sea_water_to_direction_sigma_layer_04, vap_sea_water_to_direction_sigma_layer_05, vap_sea_water_to_direction_sigma_layer_06, vap_sea_water_to_direction_sigma_layer_07, vap_sea_water_to_direction_sigma_layer_08, vap_sea_water_to_direction_sigma_layer_09, vap_sea_water_to_direction_sigma_layer_10, vap_sigma_depth_sigma_layer_01, vap_sigma_depth_sigma_layer_02, vap_sigma_depth_sigma_layer_03, vap_sigma_depth_sigma_layer_04, vap_sigma_depth_sigma_layer_05, vap_sigma_depth_sigma_layer_06, vap_sigma_depth_sigma_layer_07, vap_sigma_depth_sigma_layer_08, vap_sigma_depth_sigma_layer_09, vap_sigma_depth_sigma_layer_10, vap_surface_elevation, vap_zeta_center.</em></div>
+      </td>
+      <td class="doc-parameter-description">
+        Each specified attribute(*) will be returned as a column in the resultant CSV download.
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">utc</th>
+      <td class="doc-parameter-required">No</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> true or false</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> true</div>
+      </td>
+      <td class="doc-parameter-description">
+        Pass true to retrieve data with timestamps in UTC. Pass false to retrieve data with timestamps converted to local time of data point (without daylight savings time).
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">leap_day</th>
+      <td class="doc-parameter-required">No</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> true or false</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> false</div>
+      </td>
+      <td class="doc-parameter-description">
+        Pass true to retrieve data including leap day (where appropriate). Pass false to retrieve data excluding leap day.
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">interval</th>
+      <td class="doc-parameter-required">Yes</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong>30, 60</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> None</div>
+      </td>
+      <td class="doc-parameter-description">
+        This value determines data resolution. Either 30, 60 minute intervals are available.
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">full_name</th>
+      <td class="doc-parameter-required">No</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> string</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> None</div>
+      </td>
+      <td class="doc-parameter-description">The full name of the user requesting data.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">email</th>
+      <td class="doc-parameter-required">Yes</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> email string</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> None</div>
+      </td>
+      <td class="doc-parameter-description">
+        An active email for the user requesting data. This email will be used to deliver the extracted data.
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">affiliation</th>
+      <td class="doc-parameter-required">No</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> string</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> None</div>
+      </td>
+      <td class="doc-parameter-description">
+        The organization with which the user requesting the data is affiliated.
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">reason</th>
+      <td class="doc-parameter-required">No</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> string</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> None</div>
+      </td>
+      <td class="doc-parameter-description">The reason that the user is requesting the data.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">mailing_list</th>
+      <td class="doc-parameter-required">No</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field"><strong>Type:</strong> true or false</div>
+        <div class="doc-parameter-value-field"><strong>Default:</strong> false</div>
+      </td>
+      <td class="doc-parameter-description">
+        Pass true to add the email address to our list of recipients for the NSRDB mailing list.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Response Fields
+
+The response is composed of service-related informational fields and the results of the data query.
+
+<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+  <thead>
+    <tr>
+      <th class="doc-parameters-name" scope="col">Field</th>
+      <th class="doc-parameters-value" scope="col">Value</th>
+      <th class="doc-parameters-description" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="doc-parameter-name" scope="row">errors</th>
+      <td class="doc-parameter-value">
+      <div class="doc-parameter-value-field"><strong>Type:</strong> string array</div>
+      </td>
+      <td class="doc-parameter-description">
+      <p>A list of error messages</p>
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">inputs</th>
+      <td class="doc-parameter-value">
+      <div class="doc-parameter-value-field"><strong>Type:</strong> Object Hash</div>
+      </td>
+      <td class="doc-parameter-description">Key: Value pairs representing all input parameters</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">outputs</th>
+      <td class="doc-parameter-value">
+      <div class="doc-parameter-value-field"><strong>Type:</strong> Object Hash</div>
+      </td>
+      <td class="doc-parameter-description">Upon successful completion a message will be returned informing the user that file generation is in progress and an email will be sent to the address provided in the <code>email</code> input field when the download is ready</td>
+    </tr>
+  </tbody>
+</table>
+
+## Data File Format
+
+Generated data files are formatted in accordance with the Standard Time Series Data File Format. This file format has been developed to support [SAM](https://sam.nlr.gov/) and other NLR models and is documented fully in [this PDF](https://sam.nlr.gov/sites/default/files/content/documents/pdf/wfcsv.pdf). More information on SAM file formats available on [the SAM weather page](https://sam.nlr.gov/weather).
+
+## Examples
+Examples may not reflect this specific dataset.
+
+### JSON Output Format
+
+<div class="doc-example-url"><code>GET <%= current_page.data.url %>.json?wkt=POINT%28-66.7347+44.5262%29&attributes=vap_sea_floor_depth%2Cvap_sea_water_power_density_sigma_layer_01&interval=60&email=user@company.com</code></div>
+
+```JSON
+{
+    "inputs": {
+        "params": {},
+        "query": {
+            "email": "user@company.com",
+            "wkt": "POINT(-66.7347 44.5262)",
+            "attributes": "vap_sea_floor_depth,vap_sea_water_power_density_sigma_layer_01",
+            "interval": "60",
+            "names": "9999"
+        }
+    },
+    "metadata": {
+        "version": "2.0.0",
+        "resultset": {
+            "count": 1
+        }
+    },
+    "status": 200,
+    "outputs": {
+        "message": "File generation in progress. An email will be sent to user@company.com when the download is ready.",
+        "downloadUrl": "https://s3.us-west-2.amazonaws.com/wave-data.stratus.nlr.gov/142dc080e69d45f10d37206b1d9042eb.zip"
+    },
+    "errors": []
+}
+```
+
+### CSV Output Format
+Direct streaming of CSV data is supported for single location, single year only. The following response example is truncated after the first few rows of data.
+
+<div class="doc-example-url"><code>GET <%= current_page.data.url %>.csv?wkt=POINT%28-66.7347+44.5262%29&attributes=vap_sea_floor_depth%2Cvap_sea_water_power_density_sigma_layer_01&interval=60&email=user@company.com</code></div>
+
+```csv
+Source,Location ID,Latitude,Longitude,Water Depth,Time Zone,Local Time Zone,Jurisdiction,Element Vertex 1 Latitude,Element Vertex 1 Longitude,Element Vertex 2 Latitude,Element Vertex 2 Longitude,Element Vertex 3 Latitude,Element Vertex 3 Longitude,Distance to Shore,Grid Resolution,Version
+Hydropower and Hydrokinetic Office (H2O),8696,44.52943,-66.73733,47.093952,-32768,0,"b'Not Specified, outside jurisdiction of United States of America'",44.535194,-66.73625,44.526222,-66.73104,44.52687,-66.7447,2.7323058,1103.5078,v1.0.0
+Year,Month,Day,Hour,Minute,Sea Floor Depth,Sea Water Power Density Sigma Layer 01
+2017,1,1,0,30,45.2774772644043,281.2557067871094
+2017,1,1,1,30,46.23480987548828,635.871826171875
+2017,1,1,2,30,47.38137435913086,570.61083984375
+2017,1,1,3,30,48.45409393310547,246.6868438720703
+2017,1,1,4,30,49.13328552246094,43.51939010620117
+2017,1,1,5,30,49.22875213623047,75.03903198242188
+2017,1,1,6,30,48.73418426513672,566.7022705078125
+2017,1,1,7,30,47.871482849121094,1078.62841796875
+2017,1,1,8,30,46.802642822265625,780.2839965820312
+2017,1,1,9,30,45.77614974975586,300.3384094238281
+2017,1,1,10,30,45.15184783935547,29.84271240234375
+2017,1,1,11,30,44.9787483215332,1.356766700744629
+2017,1,1,12,30,45.38188171386719,120.8879165649414
+```
+
+### POST request example in Python
+
+```python
+import requests
+
+url = "http://developer.nlr.gov<%= current_page.data.url %>.json?api_key=yourapikeygoeshere"
+
+payload = "wkt=POINT%28-66.7347+44.5262%29&attributes=vap_sea_floor_depth%2Cvap_sea_water_power_density_sigma_layer_01&interval=60&email=user@company.com"
+
+headers = {
+    'content-type': "application/x-www-form-urlencoded",
+    'cache-control': "no-cache"
+}
+
+response = requests.request("POST", url, data=payload, headers=headers)
+
+print(response.text)
+```
+
+<h2 id="rate-limits">Rate Limits</h2>
+
+Rate limits for this application are significantly less than the [standard rate limits](/docs/rate-limits){:target="_blank"} for developer.nlr.gov. This decrease in the limit is required as the data provided through this service is significantly more computationally intensive to generate and provide. These rate limits are carefully calculated to allow all users the maximum throughput that our servers can sustain.
+
+There are several levels of rate limiting for this service. The first limit determines how many requests a given user can make per 24 hour period. For requests utilizing the <em>.csv</em> format this rate limit is set at 10,000 a day at a frequency of no more than 1 per second. For all other requests this limit is set at 2000 requests per day at a frequency of no more than 1 every 2 seconds.
+
+Secondly each user is limited to 20 in-flight requests at any given time.
+
+In addition, the service has a fail-safe mechanism to prevent significant performance decreases that can be caused by unexpectedly high usage of the service. This limit will cause the service to stop accepting requests when the queue reaches a point where additional requests will significantly lower server performance. When this limit is hit, the service will error with a message describing that the request queue is full.
+
+For some tips and tricks to maximize data downloads please read the guide [here](/docs/wave/guide/).
+
+<h2 id="contacts">Contact</h2>
+
+<p>For questions about the API or the data models please contact <a href="mailto:marineresource@nlr.gov">marineresource@nlr.gov</a></p>
+
+<h2 id="errors">Errors</h2>
+
+<p><a href="/docs/errors/">Standard errors</a> may be returned. In addition, the following service-specific errors may be returned:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+  <thead>
+    <tr>
+      <th class="doc-parameters-name" scope="col" style="width: 100px;">HTTP Status Code</th>
+      <th class="doc-parameters-required" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="doc-parameter-name" scope="row">400</th>
+      <td class="doc-parameter-description">Bad Request: When required parameters are missing.</td>
+    </tr>
+  </tbody>
+</table>

@@ -30,6 +30,6 @@ If you're working on Swagger documentation, you can run `rake lint` locally to c
 ## Deploy
 
 - Changes committed to the `staging` branch will automatically be deployed to the staging site.
-- Changes committed to the `master` branch will automatically be deployed to the production site.
+- Changes committed to the `main` branch will automatically be deployed to the production site.
 
 Deploys may take a few minutes after pushing before they show up. You can check the status via the Actions tab above.
