@@ -36,7 +36,7 @@ GEM
     ffi (1.17.3)
     ffi (1.17.3-aarch64-linux-gnu)
     ffi (1.17.3-x86_64-linux-gnu)
-    haml (7.2.0)
+    haml (6.4.0)
       temple (>= 0.8.2)
       thor
       tilt
@@ -60,17 +60,17 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
     memoist (0.16.2)
-    middleman (4.6.2)
-      middleman-cli (= 4.6.2)
-      middleman-core (= 4.6.2)
+    middleman (4.6.3)
+      middleman-cli (= 4.6.3)
+      middleman-core (= 4.6.3)
     middleman-alias (0.0.17)
       middleman-core (>= 3.3)
-    middleman-cli (4.6.2)
+    middleman-cli (4.6.3)
       thor (>= 0.17.0, < 2)
-    middleman-core (4.6.2)
+    middleman-core (4.6.3)
       activesupport (>= 6.1)
       addressable (~> 2.4)
-      bundler (~> 2.0)
+      bundler (> 2.0)
       coffee-script (~> 2.2)
       contracts
       dotenv
@@ -78,14 +78,14 @@ GEM
       execjs (~> 2.0)
       fast_blank
       fastimage (~> 2.0)
-      haml (>= 4.0.5)
+      haml (>= 4.0.5, < 7)
       hamster (~> 3.0)
       hashie (>= 3.4, < 6.0)
       i18n (>= 1.6, < 1.15)
       kramdown (~> 2.4)
       listen (~> 3.0)
       memoist (~> 0.14)
-      padrino-helpers (~> 0.15.0)
+      padrino-helpers (>= 0.15, < 0.17)
       parallel
       rack (>= 3)
       rackup
@@ -117,7 +117,7 @@ GEM
     parslet (2.0.0)
     prism (1.9.0)
     public_suffix (7.0.5)
-    rack (3.2.5)
+    rack (3.2.6)
     rack-proxy (0.7.7)
       rack
     rackup (2.3.1)
