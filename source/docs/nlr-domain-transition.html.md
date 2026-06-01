@@ -6,17 +6,17 @@ hide_domain_transition_link: true
 
 # NLR.gov Domain Transition
 
-The National Laboratory of the Rockies (NLR) is retiring the `nrel.gov` domain near the end of May and transitioning to the new `nlr.gov` domain.
+The National Laboratory of the Rockies (NLR) retired the `nrel.gov` domain on May 29, 2026, after transitioning to the new `nlr.gov` domain.
 
-**To avoid an interruption in service, you need to update your API calls to use the new `developer.nlr.gov` URLs by April 30, 2026**, or by May 29, 2026, with short outages scheduled in May before the old domain expires. Your existing API key will continue to work—only the domain in the URL needs to be updated.
+**If you have not already, you need to update your API calls to use the new `developer.nlr.gov` URLs.** Your existing API key will continue to work—only the domain in the URL needs to be updated.
 
 Here is a timeline for this domain change:
 
 - **March 2, 2026:** The new `developer.nlr.gov` domain became available to use and begin switching API calls to the new URLs. Emails were sent to all API key owners having made requests in the past year to announce the domain change.
 - **April 15, 2026:** Additional reminder emails were sent to API key owners that had not transitioned to the new domain yet.
-- **May 1, 2026:** Periodic brownouts (scheduled outages for short durations) began where traffic to the old `developer.nrel.gov` domain returns errors with instructions about using the new domain. Traffic already switched to the new `developer.nlr.gov` domain is not affected.
-    - During each brownout period, API requests will return a `410 Gone` HTTP error with a message about the domain change.
-    - Scheduled outages will occur during the following times:
+- **May 1, 2026:** Periodic brownouts (scheduled outages for short durations) began where traffic to the old `developer.nrel.gov` domain returned errors with instructions about using the new domain. Traffic already switched to the new `developer.nlr.gov` domain was not affected.
+    - During each brownout period, API requests returned a `410 Gone` HTTP error with a message about the domain change.
+    - Scheduled outages occurred during the following times:
 
         <table class="table table-bordered">
           <thead>
@@ -200,4 +200,4 @@ Here is a timeline for this domain change:
           </tbody>
         </table>
 
-- **May 29, 2026:** The `developer.nrel.gov` domain will expire and stop working completely. DNS for the `nrel.gov` domain and all subdomains will cease to resolve and will not redirect.
+- **May 29, 2026:** The `developer.nrel.gov` domain expired and stopped working completely. DNS for the `nrel.gov` domain and all subdomains ceased to resolve and will not redirect.
