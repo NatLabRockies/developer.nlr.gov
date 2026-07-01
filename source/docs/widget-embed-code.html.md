@@ -5,7 +5,7 @@ hide_domain_transition_alert: true
 ---
 
 <div class="alert alert-warning d-flex align-items-center" role="alert">
-  <i class="fa-solid fa-triangle-exclamation bi flex-shrink-0 me-2"></i>
+  <i class="fa-solid fa-triangle-exclamation bi flex-shrink-0 me-2 fa-width-auto"></i>
   <p class="m-0 lh-sm">
     <strong>Website Owners:</strong> Update any <code>nrel.gov</code> references in your widget embed code to <code>nlr.gov</code>.
   </p>
