@@ -7,29 +7,29 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@fontsource-variable/roboto": "^5.2.9",
-    "@fontsource/roboto": "^5.2.9",
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fontsource-variable/roboto": "^5.2.10",
+    "@fontsource/roboto": "^5.2.10",
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "a11y-dialog": "^8.1.5",
     "bootstrap": "^5.3.8",
     "domready": "^1.0.8",
     "escape-html": "^1.0.3",
     "form-serialize": "^0.7.2",
-    "swagger-ui-dist": "^5.31.1"
+    "swagger-ui-dist": "^5.32.8"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.4.1",
-    "@eslint/js": "^9.39.2",
-    "@stoplight/spectral-cli": "^6.15.0",
-    "autoprefixer": "^10.4.24",
-    "eslint": "^9.39.2",
+    "@eslint/compat": "^2.1.0",
+    "@eslint/js": "^10.0.1",
+    "@stoplight/spectral-cli": "^6.16.0",
+    "autoprefixer": "^10.5.1",
+    "eslint": "^10.5.0",
     "gh-pages": "^6.3.0",
-    "globals": "^16.5.0",
-    "sass": "^1.97.3",
-    "vite": "^5.4.21",
-    "vite-plugin-ruby": "5.1.1"
+    "globals": "^17.7.0",
+    "sass": "^1.101.0",
+    "vite": "^8.1.0",
+    "vite-plugin-ruby": "^5.2.2"
   },
-  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
+  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b"
 }

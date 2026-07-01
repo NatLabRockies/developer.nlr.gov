@@ -3,7 +3,8 @@ services:
     build:
       context: .
       args:
-        BUNDLE_INSTALL_ARGS: ""
+        BUNDLE_FROZEN: "false"
+        BUNDLE_WITHOUT: ""
         PNPM_INSTALL_ARGS: ""
     volumes:
       - .:/app

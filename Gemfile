@@ -1,9 +1,13 @@
-source "https://rubygems.org"
+source "https://rubygems.org", cooldown: 7
 
-ruby "~> 3.4.0"
+ruby "~> 4.0.0"
 
 # Middleman Gems
 gem "middleman", "~> 4.6.2"
+
+# Missing dependency under Ruby 4 for middleman.
+gem "cgi", "~> 0.5.2"
+gem "ostruct", "~> 0.6.3"
 
 # GitHub-flavored markdown.
 gem "kramdown-parser-gfm", "~> 1.1.0"
@@ -18,10 +22,10 @@ gem "middleman-syntax", "~> 3.6.1"
 gem "middleman-alias", "~> 0.0.17"
 
 # JSON validation
-gem "multi_json", "~> 1.19.1"
+gem "json", "~> 2.20.0"
 
 # Test tasks
-gem "rake", "~> 13.3"
+gem "rake", "~> 13.4"
 
 # For making API calls to generate docs.
 gem "rest-client", "~> 2.1.0"

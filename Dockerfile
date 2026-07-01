@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/ruby:3.4-slim-trixie
+FROM public.ecr.aws/docker/library/ruby:4.0-slim-trixie
 
 ENV \
   BUNDLE_JOBS=20 \
@@ -41,12 +41,15 @@ WORKDIR /app
 
 # Install gems (all gems first for better Docker caching for CI/CD).
 COPY Gemfile Gemfile.lock /app/
+ARG BUNDLE_FROZEN="true"
+ENV BUNDLE_FROZEN=$BUNDLE_FROZEN
 RUN bundle install
-ARG BUNDLE_INSTALL_ARGS="--frozen --without=development test"
-RUN set -x && bundle install $BUNDLE_INSTALL_ARGS && bundle clean --force --verbose
+ARG BUNDLE_WITHOUT="development test"
+ENV BUNDLE_WITHOUT=$BUNDLE_WITHOUT
+RUN set -x && bundle install && bundle clean --force --verbose
 
 # Install NPM dependencies.
-COPY package.json pnpm-lock.yaml /app/
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml /app/
 ARG PNPM_INSTALL_ARGS="--frozen-lockfile"
 RUN --mount=type=cache,target=/usr/local/pnpm/store set -x && \
   ln -s "$NODE_MODULES_DIR" /app/node_modules && \
