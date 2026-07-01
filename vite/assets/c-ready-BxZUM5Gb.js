@@ -1,0 +1,2 @@
+import{t as e}from"./c-rolldown-runtime-Bh1tDfsg.js";var t=e(((e,t)=>{(function(e,n){t===void 0?typeof define==`function`&&typeof define.amd==`object`?define(n):this[e]=n():t.exports=n()})(`domready`,function(){var e=[],t,n=document,r=n.documentElement.doScroll,i=`DOMContentLoaded`,a=(r?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return a||n.addEventListener(i,t=function(){for(n.removeEventListener(i,t),a=1;t=e.shift();)t()}),function(t){a?setTimeout(t,0):e.push(t)}})}));export{t};
+//# sourceMappingURL=c-ready-BxZUM5Gb.js.map

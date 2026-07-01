@@ -1,0 +1,2 @@
+var e=new MutationObserver(()=>{let t=document.querySelector(`.api-umbrella-signup-embed-content-container`);if(t&&t.shadowRoot){e.disconnect();let n=new CSSStyleSheet;n.replaceSync(`:root,.app-style-root{--bs-link-color:#0071b8;--bs-link-color-rgb:0, 113, 184;--bs-link-hover-color:var(--bs-link-color);--bs-link-hover-color-rgb:var(--bs-link-color-rgb)}.btn-primary{--bs-btn-bg:#0079c2;--bs-btn-border-color:#0079c2}`),t.shadowRoot.adoptedStyleSheets.push(n)}});e.observe(document.body,{subtree:!0,childList:!0});
+//# sourceMappingURL=signup-DKlH7V6U.js.map
