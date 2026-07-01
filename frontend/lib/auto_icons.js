@@ -8,7 +8,7 @@ function buildIcon(iconData) {
   const cacheId = `${iconData.prefix}-${iconData.iconName}`;
   if (!cache[cacheId]) {
     // Handle imported FontAwesome SVG icons.
-    const faIcon = icon(iconData, { classes: ['template-auto-icon'] });
+    const faIcon = icon(iconData, { classes: ['template-auto-icon fa-width-auto'] });
     cache[cacheId] = faIcon.node[0];
   }
 
