@@ -414,18 +414,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3 id="csv-output-format">CSV Output Format</h3>
 <p>Direct streaming of CSV data is supported for single location, single year only. The following response example is truncated after the first few rows of data.</p>
 
-<div class="doc-example-url"><code>GET /api/wind-toolkit/v2/wind/wtk-sup3rwind-south-america-v1-0-0-5min-download.csv?email=user@email.com&amp;wkt=POINT%28-64.19+-12.53%29&amp;attributes=winddirection_10m&amp;names=2022&amp;interval=5&amp;api_key=DEMO_KEY</code></div>
+<div class="doc-example-url"><code>GET /api/wind-toolkit/v2/wind/wtk-sup3rwind-south-america-v1-0-0-5min-download.csv?email=user@email.com&amp;api_key=DEMO_KEY&amp;wkt=POINT%28-68.81692+1.08800%29&amp;attributes=winddirection_10m%2Cwinddirection_40m%2Cwinddirection_80m%2Cwinddirection_100m%2Cwinddirection_120m%2Cwinddirection_160m%2Cwinddirection_200m%2Cwindspeed_10m%2Cwindspeed_40m%2Cwindspeed_80m%2Cwindspeed_100m%2Cwindspeed_120m%2Cwindspeed_160m%2Cwindspeed_200m&amp;names=2024&amp;interval=5</code></div>
 
-<div class="highlight"><pre class="highlight plaintext"><code>SiteID,4279718,Site Timezone,-4,Data Timezone,0,Longitude,-64.183334,Latitude,-12.533334
-Year,Month,Day,Hour,Minute,wind direction at 10m (deg)
-2022,1,1,0,0,354.85
-2022,1,1,0,5,359.73
-2022,1,1,0,10,359.76
-2022,1,1,0,15,356.73
-2022,1,1,0,20,2.97
-2022,1,1,0,25,2.79
-2022,1,1,0,30,2.95
-2022,1,1,0,35,358.63
+<div class="highlight"><pre class="highlight plaintext"><code>SiteID	1760131	Site Timezone	-4	Data Timezone	0	Longitude	-68.816666	Latitude	1.0833334
+Year	Month	Day	Hour	Minute	wind direction at 10m (deg)	wind direction at 40m (deg)	wind direction at 80m (deg)	wind direction at 100m (deg)	wind direction at 120m (deg)	wind direction at 160m (deg)	wind direction at 200m (deg)	wind speed at 10m (m/s)	wind speed at 40m (m/s)	wind speed at 80m (m/s)	wind speed at 100m (m/s)	wind speed at 120m (m/s)	wind speed at 160m (m/s)	wind speed at 200m (m/s)
+2024	1	1	0	0	36.39	40.03	45.6	48.42	51.65	55.2	56.41	0.69	1.9	3.64	4.36	4.91	5.45	5.52
+2024	1	1	0	5	33.23	39.89	45.98	49.04	51.75	54.74	55.27	0.7	1.86	3.5	4.21	4.76	5.37	5.45
+2024	1	1	0	10	33.02	39.34	45.08	47.95	51.06	53.95	54.63	0.8	1.92	3.46	4.17	4.74	5.39	5.52
+2024	1	1	0	15	33.53	37.22	43.09	46.35	49.28	52.68	53.63	0.89	2.04	3.53	4.2	4.78	5.44	5.53
+2024	1	1	0	20	32.58	36.33	41.16	44.79	48.08	52.27	53.81	0.9	2.06	3.49	4.16	4.76	5.42	5.46
+2024	1	1	0	25	32.43	35.5	40.93	44.32	47.75	51.75	52.89	0.94	2.05	3.38	4.05	4.65	5.29	5.34
+2024	1	1	0	30	34.48	36.31	40.72	43.99	47.2	50.59	51.63	0.98	2.12	3.39	4	4.55	5.19	5.24
+2024	1	1	0	35	26.02	32.04	38.17	41.48	44.89	48.76	49.85	1.01	2.18	3.39	3.93	4.44	5.07	5.16
+2024	1	1	0	40	24.39	31.05	36.75	40.33	43.16	46.89	48.39	1.03	2.25	3.42	3.94	4.4	5.03	5.12
+2024	1	1	0	45	26.78	32.18	38.01	40.42	42.88	45.72	46.94	1.04	2.32	3.43	3.95	4.39	4.98	5.08
+2024	1	1	0	50	27.41	32.57	37.44	39.6	41.59	44.33	45.41	1.13	2.45	3.58	4.03	4.44	4.98	5.12
+2024	1	1	0	55	27.72	32.01	36.21	38.05	39.7	41.83	42.53	1.18	2.54	3.69	4.13	4.53	5.01	5.19
+2024	1	1	1	0	28.24	32.32	35.8	37.21	38.75	40.4	41.43	1.28	2.67	3.91	4.35	4.72	5.2	5.37
+2024	1	1	1	5	24.76	29.78	34.5	36.05	37.4	38.6	39.23	1.37	2.83	4.07	4.5	4.85	5.31	5.49
+2024	1	1	1	10	27.13	29.93	34.5	36.07	37.16	37.87	38.2	1.35	2.85	4.13	4.54	4.85	5.26	5.43
+2024	1	1	1	15	28.76	30.75	35.89	37.11	38.1	39.23	39.54	1.12	2.62	3.88	4.28	4.59	4.95	5.17
+2024	1	1	1	20	27.96	30.61	35.2	36.74	38.02	38.91	39.37	1.05	2.53	3.8	4.21	4.51	4.91	5.16
 ...
 </code></pre></div>
 <h3 id="post-request-example-in-python">POST request example in Python</h3>
