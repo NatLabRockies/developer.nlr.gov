@@ -1,0 +1,391 @@
+---
+title: Lab Partnering Service
+summary: This service returns details for the entities on the Lab Partnering Service.
+url: GET /api/lps
+
+---
+
+# <%= current_page.data.title %> <span class="url">(<%= current_page.data.url %>)</span>
+<%= current_page.data.summary %>
+
+<%= partial "layouts/toc" %>
+
+## Request URLs
+
+<pre>GET /api/lps/<em>entityType?parameters</em></pre>
+
+## Request Parameters
+
+<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+  <thead>
+    <tr>
+      <th class="doc-parameters-name" scope="col">Parameter</th>
+      <th class="doc-parameters-required" scope="col">Required</th>
+      <th class="doc-parameters-value" scope="col">Value</th>
+      <th class="doc-parameters-description" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="doc-parameter-name" scope="row">entityType</th>
+      <td class="doc-parameter-required">Yes</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field">
+          <strong>Type:</strong> string
+        </div>
+        <div class="doc-parameter-value-field">
+          <strong>Default:</strong> None
+        </div>
+        <div class="doc-parameter-value-field">
+          <strong>Options:</strong> <em>experts</em>, <em>facilities</em>, <em>technology-summaries</em>, <em>success-stories</em>, <em>patents</em>
+        </div>
+      </td>
+      <td class="doc-parameter-description">
+        <p>The entity type to retrieve.</p>
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">api_key</th>
+      <td class="doc-parameter-required">Yes</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field">
+          <strong>Type:</strong> string
+        </div>
+        <div class="doc-parameter-value-field">
+          <strong>Default:</strong> None
+        </div>
+      </td>
+      <td class="doc-parameter-description">
+        <p>Your developer API key. See <a href="/docs/api-key/">API keys</a> for more information.</p>
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">labs</th>
+      <td class="doc-parameter-required">No</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field">
+          <strong>Type:</strong> array of strings
+        </div>
+        <div class="doc-parameter-value-field">
+          <strong>Default:</strong> None
+        </div>
+        <div class="doc-parameter-value-field">
+          <strong>One or more of:</strong> <i>ames, anl, bnl, fnal, inl, kcnsc, lanl, lbnl, llnl, netl, nlr, nnss, ornl, pantex, pnnl, pppl, slac, snl, srnl, srs, tjnaf, y12</i>
+        </div>
+      </td>
+      <td class="doc-parameter-description">
+        <p>The aliases for the labs. If no lab aliases are provided, data for all labs will be returned.</p>
+        <strong>ames</strong>: Ames National Laboratory<br />
+        <strong>anl</strong>: Argonne National Laboratory<br />
+        <strong>bnl</strong>: Brookhaven National Laboratory<br />
+        <strong>fnal</strong>: Fermi National Accelerator Laboratory<br />
+        <strong>inl</strong>: Idaho National Laboratory<br />
+        <strong>kcnsc</strong>: Kansas City National Security Campus<br />
+        <strong>lanl</strong>: Los Alamos National Laboratory<br />
+        <strong>lbnl</strong>: Lawrence Berkeley National Laboratory<br />
+        <strong>llnl</strong>: Lawrence Livermore National Laboratory<br />
+        <strong>netl</strong>: National Energy Technology Laboratory<br />
+        <strong>nlr</strong>: National Laboratory of the Rockies<br />
+        <strong>nnss</strong>: Nevada National Security Sites<br />
+        <strong>ornl</strong>: Oak Ridge National Laboratory<br />
+        <strong>pantex</strong>: Pantex Plant<br />
+        <strong>pnnl</strong>: Pacific Northwest National Laboratory<br />
+        <strong>pppl</strong>: Princeton Plasma Physics Laboratory<br />
+        <strong>slac</strong>: SLAC National Accelerator Laboratory<br />
+        <strong>snl</strong>: Sandia National Laboratories<br />
+        <strong>srnl</strong>: Savannah River National Laboratory<br />
+        <strong>srs</strong>: Savannah River Site<br />
+        <strong>tjnaf</strong>: Thomas Jefferson National Accelerator Facility Jefferson Lab<br />
+        <strong>y12</strong>: Y-12 National Security Complex<br />
+      </td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">limit</th>
+      <td class="doc-parameter-required">No</td>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field">
+          <strong>Type:</strong> integer
+        </div>
+        <div class="doc-parameter-value-field">
+          <strong>Default:</strong> 15
+        </div>
+      </td>
+      <td class="doc-parameter-description">The number of results to return per page.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Response Fields
+
+The response is composed of service-related informational fields and the results of the data query.
+
+<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+  <thead>
+    <tr>
+      <th class="doc-parameters-name" scope="col">Field</th>
+      <th class="doc-parameters-value" scope="col">Value</th>
+      <th class="doc-parameters-description" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="doc-parameter-name" scope="row">current_page</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> integer</td>
+      <td class="doc-parameter-description">The current page of the request.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">data</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> array of objects</td>
+      <td class="doc-parameter-description">List of entities of the requested type.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">first_page_url</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> string</td>
+      <td class="doc-parameter-description">Link to first page of results.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">from</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> integer</td>
+      <td class="doc-parameter-description">Index from which the results have started.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">last_page</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> integer</td>
+      <td class="doc-parameter-description">Index of the last page.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">links</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> array of objects</td>
+      <td class="doc-parameter-description">List of link objects for pagination.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">next_page_url</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> string</td>
+      <td class="doc-parameter-description">Link to next page of results.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">path</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> string</td>
+      <td class="doc-parameter-description">Path to domain and URL.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">per_page</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> integer</td>
+      <td class="doc-parameter-description">Number of results per page.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">prev_page_url</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> string</td>
+      <td class="doc-parameter-description">Link to previous page of results.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">to</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> integer</td>
+      <td class="doc-parameter-description">Index on which the results end.</td>
+    </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">total</th>
+      <td class="doc-parameter-value"><strong>Type:</strong> integer</td>
+      <td class="doc-parameter-description">Count of total results.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### JSON Output Format
+
+<pre>GET /api/lps/technology-summaries?api_key=DEMO_KEY&labs[]=nlr&limit=2</pre>
+
+```json
+{
+  "current_page": 1,
+  "data": [
+    {
+      "id": "clostridium-thermocellum-cbha-amino-acid-sequence-modified-for-enhanced-catalytic-activity-in-the-saccharification-of-cellulose",
+      "title": "Clostridium Thermocellum CbhA- Amino acid sequence modified for enhanced catalytic activity in the saccharification of cellulose",
+      "image": "https://labpartnering.org/storage/labs/NLR Background.png",
+      "link": "https://labpartnering.org/lab-technologies/clostridium-thermocellum-cbha-amino-acid-sequence-modified-for-enhanced-catalytic-activity-in-the-saccharification-of-cellulose",
+      "publication_link": "https://patents.google.com/patent/US8993276B2/",
+      "attachments": [],
+      "videos": [],
+      "patents": [],
+      "expert": null,
+      "summary": "<p> The efficient action of cellulases to release fermentable sugars from biomass cellulose is an important step in making biomass-derived products economically viable. Despite efforts to engineer cellulases with significantly improved activities, few successes have been demonstrated. &nbsp;Prior cellulase engineering has focused upon screening small sets of rationally guided mutations for higher thermal stability and subsequent modest gains in activity at higher conversion temperatures. Significant activity improvement in processive cellulase enzymes on realistic substrates at industrially relevant enzyme loadings and substrate conversion levels remains to be demonstrated.&nbsp;</p>",
+      "description": "<p> Inventors at NREL have engineered dramatically improved cellulosomal cellulases (e.g., C. thermocellum CbhA) by exchanging domains with other cellulases to form chimeric polypeptides. In particular, exchanging linker domains in the chimeric polypeptides resulted in an increase in cellulase activity when compared with the wild-type polypeptides. The high activity and high intramolecular synergy displayed by the chimeric cellulases also demonstrates the promise of enhancing the activity of cellulases by linking catalytic domains not combined in nature.</p><p> CbhA is one of the key cellulosomal cellulases in the C. thermocellum cellulosome system. The improvements in activity exhibited in chimeras by substituting the long linker from C. bescii CelA demonstrates the potential of this new approach exploiting modular cooperation to enhance activity of a large cellulosomal cellulase, but also supports applying this new approach to improvement of other multimodular cellulases. The high activity and high intramolecular synergy displayed by the chimeric cellulases demonstrates the promise of enhancing the activity of cellulases by linking catalytic domains not usually combined in nature.</p><p>For more information, please contact Eric Payne at Eric.Payne@nlr.gov.</p><p>ROI 12-33</p><p><a href=\"https://patents.google.com/patent/US8993276B2/\" target=\"_blank\" rel=\"noreferrer noopener\">U.S. Patent # 8,993,276</a>\r\n</p><p><br></p><p>\r\n</p>",
+      "applications_and_industries": "<ul> <li> Advanced biofuels and bio-products</li> <li> Enhanced cellulases</li> </ul>",
+      "benefits": "<ul> <li> Increased cellulase activity</li> <li> Roadmap to further biomass modification</li> <li> Increased thermal stability</li> </ul>",
+      "development_stage": "Development",
+      "internal_number": null,
+      "tags": [
+        "Carbon Dioxide Removal",
+        "Mitigation",
+        "Energy Storage",
+        "Process and Design",
+        "Community and Infrastructure Resilience",
+        "Green Workforce Development",
+        "Renewable Energy",
+        "Enhanced Oil Recovery",
+        "Fossil Energy",
+        "Emissions Technologies",
+        "Energy Efficiency",
+        "Biofuels",
+        "Adaptation",
+        "Biomaterials",
+        "Biomanufacturing"
+      ],
+      "labs": [
+        {
+          "id": "nlr",
+          "title": "National Laboratory of the Rockies",
+          "image": "https://labpartnering.org/storage/labs/NLR Background.png",
+          "link": "https://labpartnering.org/labs/nlr",
+          "alias": "nlr"
+        }
+      ],
+      "departments": []
+    },
+    {
+      "id": "wet-chemical-surface-passivation-treatments-for-cdte",
+      "title": "Wet Chemical Surface Passivation Treatments for CdTe",
+      "image": "https://labpartnering.org/storage/labs/NLR Background.png",
+      "link": "https://labpartnering.org/lab-technologies/wet-chemical-surface-passivation-treatments-for-cdte",
+      "publication_link": null,
+      "attachments": [],
+      "videos": [],
+      "patents": [],
+      "expert": null,
+      "summary": "<p> In recent years thin film Cadmium Telluride (CdTe) solar cell recombination rates have been reduced by increasing bulk crystal quality so that a greater number of charge carriers can participate in conduction. As devices have improved and more minority carriers reach the back surface contact layers, surface recombination has become a greater limiter of device efficiency. This inefficiency is likely a result of an acidic surface treatment for bulk CdTe material that is intended to prepare the material for contacting but leaves a residual Te-rich layer on the surface that does not provide sufficient passivation for current charge carrier concentrations. New methods of preparing bulk CdTe material for contacting that reduce the portion of Te present on the surface of the device are necessary for further efficiency gains.&nbsp;</p>",
+      "description": "<p> Researchers at NREL have invented a method of treating CdTe materials with a basic solution so that surface recombination is minimized. The treatment consistently leaves non-stoichiometric Cd-rich surfaces that can be reconstructed into a crystalline lattice that exhibits a significant increase in carrier lifetimes. The invention is valid over a range of temperatures and times that are suitable for industrial processing (5s \u2013 5min, 20C \u2013 65C) and has been demonstrated successfully in both air and inert environments. Devices created using this method increased near-surface charge carrier lifetimes enough that the true bulk lifetime of the material was observed.</p><p>For more information, please contact Bill Hadley at:</p><p>Bill.Hadley@nlr.gov</p><p>U.S. Patent # 9,722,111 B2\r\n</p><p>ROI 14-39</p>",
+      "applications_and_industries": "<ul> <li> CdTe photovoltaics</li> </ul>",
+      "benefits": "<ul> <li> Increased device efficiency through decreased surface recombination</li> <li> Easily implemented in industrial environments</li> <li> Method works consistently at low cost</li> </ul>",
+      "development_stage": "Development",
+      "internal_number": null,
+      "tags": [
+        "Renewable Energy",
+        "Green Workforce Development",
+        "Energy Storage",
+        "Community and Infrastructure Resilience",
+        "Process and Design",
+        "Fossil Energy",
+        "Emissions Technologies",
+        "Energy Efficiency",
+        "Solar Energy",
+        "Adaptation",
+        "Mitigation",
+        "Semiconductors"
+      ],
+      "labs": [
+        {
+          "id": "nlr",
+          "title": "National Laboratory of the Rockies",
+          "image": "https://labpartnering.org/storage/labs/NLR Background.png",
+          "link": "https://labpartnering.org/labs/nlr",
+          "alias": "nlr"
+        }
+      ],
+      "departments": []
+    }
+  ],
+  "first_page_url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=1",
+  "from": 1,
+  "last_page": 239,
+  "last_page_url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=239",
+  "links": [
+    { "url": null, "label": "&laquo; Previous", "page": null, "active": false },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=1",
+      "label": "1",
+      "page": 1,
+      "active": true
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=2",
+      "label": "2",
+      "page": 2,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=3",
+      "label": "3",
+      "page": 3,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=4",
+      "label": "4",
+      "page": 4,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=5",
+      "label": "5",
+      "page": 5,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=6",
+      "label": "6",
+      "page": 6,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=7",
+      "label": "7",
+      "page": 7,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=8",
+      "label": "8",
+      "page": 8,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=9",
+      "label": "9",
+      "page": 9,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=10",
+      "label": "10",
+      "page": 10,
+      "active": false
+    },
+    { "url": null, "label": "...", "active": false },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=238",
+      "label": "238",
+      "page": 238,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=239",
+      "label": "239",
+      "page": 239,
+      "active": false
+    },
+    {
+      "url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=2",
+      "label": "Next &raquo;",
+      "page": 2,
+      "active": false
+    }
+  ],
+  "next_page_url": "https://developer.nlr.gov/api/lps/technology-summaries?labs%5B0%5D=nlr&limit=2&page=2",
+  "path": "https://developer.nlr.gov/api/lps/technology-summaries",
+  "per_page": 2,
+  "prev_page_url": null,
+  "to": 2,
+  "total": 477
+}
+```
+
+## Rate Limits
+
+[Standard rate limits](/docs/rate-limits) apply. No more than 1,000 requests may be made in any hour
+
+## Errors
+
+[Standard errors](/docs/errors) may be returned.
