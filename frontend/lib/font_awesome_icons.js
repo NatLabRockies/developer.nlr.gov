@@ -1,4 +1,5 @@
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons/faBullhorn';
 import { faComments } from '@fortawesome/free-solid-svg-icons/faComments';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
@@ -14,6 +15,7 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core';
 
 library.add(
   faBars,
+  faBullhorn,
   faComments,
   faGithub,
   faInstagram,
