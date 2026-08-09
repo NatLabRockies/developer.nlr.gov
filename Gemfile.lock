@@ -50,7 +50,7 @@ GEM
       domain_name (~> 0.5)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
-    json (2.20.0)
+    json (2.21.2)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
@@ -167,7 +167,7 @@ PLATFORMS
 DEPENDENCIES
   cgi (~> 0.5.2)
   dotenv (~> 3.2.0)
-  json (~> 2.20.0)
+  json (~> 2.21.2)
   kramdown-parser-gfm (~> 1.1.0)
   middleman (~> 4.6.2)
   middleman-alias (~> 0.0.17)
