@@ -650,52 +650,6 @@ definitions:
         description: A list of heavy-duty vehicles associated with the heavy-duty engine
         items:
           "$ref": "#/definitions/HeavyDutyVehicleForEnginesAndHybrids"
-  HeavyDutyHybridResponse:
-    description: This is a heavy-duty hybrid/conversion system
-    properties:
-      id:
-        type: integer
-        description: A unique identifier for the heavy-duty hybrid/conversion system
-      model:
-        type: string
-        description: The model of the heavy-duty hybrid/conversion system
-      heavy_duty_manufacturer_id:
-        type: integer
-        description: A unique identifier for the heavy-duty hybrid/conversion system's manufacturer
-      heavy_duty_manufacturer_name:
-        type: string
-        description: The name of the heavy-duty hybrid/conversion system's manufacturer
-      heavy_duty_hybrid_configuration_id:
-        type: integer
-        description: A unique identifier for the fuel configuration of the heavy-duty hybrid/conversion system
-      heavy_duty_hybrid_configuration_name:
-        type: string
-        description: The name of the heavy-duty hybrid/conversion system fuel configuration
-      heavy_duty_hybrid_storage_id:
-        type: integer
-        description: A unique identifer for the storage system of the heavy-duty hybrid/conversion system
-      heavy_duty_hybrid_type_name:
-        type: string
-        description: The type of heavy-duty hybrid/conversion system
-      heavy_duty_hybrid_storage_name:
-        type: string
-        description: The name of the storage system for the heavy-duy hybrid/conversion system
-      heavy_duty_hybrid_type_id:
-        type: integer
-        description: A unique identifier for the type of heavy-duty hybrid/conversion system
-      heavy_duty_chassis_ids:
-        type: array
-        items:
-          type: integer
-        description: An array of unique identifiers for associated heavy-duty chassis
-      fuels:
-        type: array
-        items:
-          "$ref": "#/definitions/Fuel"
-      heavy_duty_vehicles:
-        type: array
-        items:
-          "$ref": "#/definitions/HeavyDutyVehicleForEnginesAndHybrids"
   HeavyDutyVehicleForEnginesAndHybrids:
     description: This is a heavy-duty vehicle
     properties:
