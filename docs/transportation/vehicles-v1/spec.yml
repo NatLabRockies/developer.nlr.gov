@@ -152,78 +152,6 @@ paths:
                 "$ref": "#/definitions/Status"
               errors:
                 "$ref": "#/definitions/Error"
-  "/v1/heavy_duty_hybrids.{output_format}":
-    get:
-      summary: Return a full list of heavy-duty hybrid/conversion systems
-      operationId: getHybrids
-      parameters:
-        - "$ref": "#/parameters/OutputFormat"
-        - "$ref": "#/parameters/ApiKey"
-        - in: query
-          name: fuel_id
-          description: Return only heavy-duty hybrid/conversion systems associated with the fuel ID(s) provided.  A single ID or
-            a comma-separated list of multiple IDs may be given.
-          type: array
-          collectionFormat: csv
-          items:
-            type: integer
-        - in: query
-          name: manufacturer_id
-          description: Return only heavy-duty hybrid/conversion systems  associated with the manufacturer ID(s) provided.  A single
-            ID or a comma-separated list of multiple IDs may be given.
-          type: array
-          collectionFormat: csv
-          items:
-            type: integer
-      responses:
-        '200':
-          description: Successful request
-          schema:
-            type: object
-            properties:
-              metadata:
-                "$ref": "#/definitions/MetadataWithCount"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              result:
-                type: array
-                description: The array of heavy-duty hybrid/conversion systems returned
-                items:
-                  "$ref": "#/definitions/HeavyDutyHybridResponse"
-  "/v1/heavy_duty_hybrids/{id}.{output_format}":
-    get:
-      summary:  Return a single heavy-duty hybrid/conversion system given the heavy-duty hybrid/conversion system's ID
-      parameters:
-        - "$ref": "#/parameters/Id"
-        - "$ref": "#/parameters/OutputFormatNoCSV"
-        - "$ref": "#/parameters/ApiKey"
-      responses:
-        '200':
-          description: Successful request
-          schema:
-            properties:
-              metadata:
-                "$ref": "#/definitions/Metadata"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              result:
-                "$ref": "#/definitions/HeavyDutyHybridResponse"
-        '404':
-          description: Not found
-          schema:
-            properties:
-              metadata:
-                "$ref": "#/definitions/Metadata"
-              inputs:
-                "$ref": "#/definitions/Inputs"
-              status:
-                "$ref": "#/definitions/Status"
-              errors:
-                "$ref": "#/definitions/Error"
   "/v1/heavy_duty_manufacturers.{output_format}":
     get:
       summary: Return a full list of heavy-duty manufacturers
@@ -720,52 +648,6 @@ definitions:
       heavy_duty_vehicles:
         type: array
         description: A list of heavy-duty vehicles associated with the heavy-duty engine
-        items:
-          "$ref": "#/definitions/HeavyDutyVehicleForEnginesAndHybrids"
-  HeavyDutyHybridResponse:
-    description: This is a heavy-duty hybrid/conversion system
-    properties:
-      id:
-        type: integer
-        description: A unique identifier for the heavy-duty hybrid/conversion system
-      model:
-        type: string
-        description: The model of the heavy-duty hybrid/conversion system
-      heavy_duty_manufacturer_id:
-        type: integer
-        description: A unique identifier for the heavy-duty hybrid/conversion system's manufacturer
-      heavy_duty_manufacturer_name:
-        type: string
-        description: The name of the heavy-duty hybrid/conversion system's manufacturer
-      heavy_duty_hybrid_configuration_id:
-        type: integer
-        description: A unique identifier for the fuel configuration of the heavy-duty hybrid/conversion system
-      heavy_duty_hybrid_configuration_name:
-        type: string
-        description: The name of the heavy-duty hybrid/conversion system fuel configuration
-      heavy_duty_hybrid_storage_id:
-        type: integer
-        description: A unique identifer for the storage system of the heavy-duty hybrid/conversion system
-      heavy_duty_hybrid_type_name:
-        type: string
-        description: The type of heavy-duty hybrid/conversion system
-      heavy_duty_hybrid_storage_name:
-        type: string
-        description: The name of the storage system for the heavy-duy hybrid/conversion system
-      heavy_duty_hybrid_type_id:
-        type: integer
-        description: A unique identifier for the type of heavy-duty hybrid/conversion system
-      heavy_duty_chassis_ids:
-        type: array
-        items:
-          type: integer
-        description: An array of unique identifiers for associated heavy-duty chassis
-      fuels:
-        type: array
-        items:
-          "$ref": "#/definitions/Fuel"
-      heavy_duty_vehicles:
-        type: array
         items:
           "$ref": "#/definitions/HeavyDutyVehicleForEnginesAndHybrids"
   HeavyDutyVehicleForEnginesAndHybrids:
