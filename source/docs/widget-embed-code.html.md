@@ -1,7 +1,6 @@
 ---
 title: Updating Embed Code for NLR.gov Widgets
 hidden_child: true
-hide_domain_transition_alert: true
 ---
 
 # Updating Embed Code for NLR.gov Widgets

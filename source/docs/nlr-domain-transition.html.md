@@ -1,7 +1,6 @@
 ---
 title: NLR.gov Domain Transition
 hidden_child: true
-hide_domain_transition_link: true
 ---
 
 # NLR.gov Domain Transition
