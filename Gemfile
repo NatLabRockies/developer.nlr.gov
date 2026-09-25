@@ -22,7 +22,7 @@ gem "middleman-syntax", "~> 3.6.1"
 gem "middleman-alias", "~> 0.0.17"
 
 # JSON validation
-gem "json", "~> 2.20.0"
+gem "json", "~> 2.21.2"
 
 # Test tasks
 gem "rake", "~> 13.4"
