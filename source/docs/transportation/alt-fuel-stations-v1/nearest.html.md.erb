@@ -152,15 +152,15 @@ sort_value: "30"
       </tr>
     </tbody>
   </table>
+
+  ### Fuel Station Record Fields
+
+  The individual fuel station records are returned in order of ascending distance from the given location. Each station has the following attributes:
+
+  <%= partial("docs/transportation/alt-fuel-stations-v1/record_fields", :locals => { :distance => true }) %>
+
+  <%= partial("docs/transportation/alt-fuel-stations-v1/station_count_record_fields") %>
 </div>
-
-### Fuel Station Record Fields
-
-The individual fuel station records are returned in order of ascending distance from the given location. Each station has the following attributes:
-
-<%= partial("docs/transportation/alt-fuel-stations-v1/record_fields", :locals => { :distance => true }) %>
-
-<%= partial("docs/transportation/alt-fuel-stations-v1/station_count_record_fields") %>
 
 ## Examples
 
