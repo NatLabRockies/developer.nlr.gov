@@ -5,6 +5,26 @@ h3.doc span.url {
   padding-left: 12px;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+.sticky-container {
+  height: min-content;
+  position: relative;
+
+  .sticky {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    background-color: #eee;
+    padding: .3em .6em;
+    margin-bottom: .5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+}
+
 #toc ul {
   margin-bottom: 0px;
 }
@@ -33,13 +53,13 @@ h3.doc span.url {
     margin-bottom: 0px;
   }
 
-  > :not(caption) > * > * {
+  > :not(caption)>*>* {
     padding: 0.5rem 0.75rem;
   }
 }
 
 .doc-parameters {
-  > thead th {
+  >thead th {
     color: #555;
     background-color: #e5e5e5;
     background-image: linear-gradient(to bottom, #edeeef 0%, #e5e5e5 100%);
@@ -48,7 +68,7 @@ h3.doc span.url {
 }
 
 .doc-parameter-options {
-  > thead th {
+  >thead th {
     color: #555;
   }
 
