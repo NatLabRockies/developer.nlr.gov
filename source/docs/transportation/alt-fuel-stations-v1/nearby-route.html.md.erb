@@ -18,167 +18,171 @@ Driving directions and route generation are not provided by this service. You mu
 
 *Note:* This API endpoint can be accessed via either `GET` or `POST`. `POST` may be necessary if sending a long `route` parameter that exceeds the allowed URL length limit. When using `POST`, the parameters should be sent to the API in the body using `application/x-www-form-urlencoded` encoding.
 
-## Request Parameters
+<div class="sticky-container">
+  <h2 class="sticky">Request Parameters</h2>
 
-The following query parameters may be passed in the request to control the output:
+  The following query parameters may be passed in the request to control the output:
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Parameter</th>
-      <th class="doc-parameters-required" scope="col">Required</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common1") %>
-    <tr>
-      <th class="doc-parameter-name" scope="row">route</th>
-      <td class="doc-parameter-required">Yes</td>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Default:</strong> None
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>A <a href="http://en.wikipedia.org/wiki/Well-known_text">well-known text (WKT)</a> LINESTRING representing the route. Points in the LINESTRING must be specified using latitudes and longitudes.</p>
-        <p>Example: A straight line route (as the crow flies) between New York City, Chicago, and Denver:</p>
-        <pre>
-LINESTRING(-74.0 40.7, -87.63 41.87, -104.98 39.76)
-</pre>
-        <p><em>Note:</em> Real route linestrings will likely be much more detailed to properly represent the driving route of roads. Long route strings may exceed normal URL length limits and require sending the request via <code>POST</code> and <code>application/x-www-form-urlencoded</code> encoding the parameters.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">distance</th>
-      <td class="doc-parameter-required">No</td>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> decimal
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Default:</strong> <i>5.0</i>
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Range:</strong> <em>0.0</em> to <em>100.0</em>
-        </div>
-      </td>
-      <td class="doc-parameter-description">The distance (in miles) from the route to search for stations within.</td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">return_type</th>
-      <td class="doc-parameter-required">No</td>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Default:</strong> <i>all</i>
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Options:</strong> <em>all</em>, <i>ids</i>
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>Change the amount of data being returned for each station in the response.</p>
-        <table border="0" cellpadding="0" cellspacing="0" class="doc-parameter-options">
-          <thead>
-            <tr>
-              <th scope="col">Option</th>
-              <th scope="col">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">all</th>
-              <td>All station details for matching stations will be returned.</td>
-            </tr>
-            <tr>
-              <th scope="row">ids</th>
-              <td>Only the ID of each matching stations will be returned (this can lead to faster response times only the ID is needed).</td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common2") %>
-    <tr>
-      <th class="doc-parameter-name" scope="row">limit</th>
-      <td class="doc-parameter-required">No</td>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> integer or string
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Default:</strong> all
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Range:</strong> <em>0</em> to <em>200</em>, or <em>all</em>
-        </div>
-      </td>
-      <td class="doc-parameter-description">The maximum number of results to return. An explicit limit of up to 200 may be passed in, or the special <code>all</code> string may be passed in to return all results.</td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">offset</th>
-      <td class="doc-parameter-required">No</td>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> integer
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Default:</strong> 0
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Minimum:</strong> <i>0</i>
-        </div>
-      </td>
-      <td class="doc-parameter-description">Offset the results found (can be used with the <em>limit</em> parameter to paginate the results).</td>
-    </tr>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Parameter</th>
+        <th class="doc-parameters-required" scope="col">Required</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common1") %>
+      <tr>
+        <th class="doc-parameter-name" scope="row">route</th>
+        <td class="doc-parameter-required">Yes</td>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Default:</strong> None
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>A <a href="http://en.wikipedia.org/wiki/Well-known_text">well-known text (WKT)</a> LINESTRING representing the route. Points in the LINESTRING must be specified using latitudes and longitudes.</p>
+          <p>Example: A straight line route (as the crow flies) between New York City, Chicago, and Denver:</p>
+          <pre>
+  LINESTRING(-74.0 40.7, -87.63 41.87, -104.98 39.76)
+  </pre>
+          <p><em>Note:</em> Real route linestrings will likely be much more detailed to properly represent the driving route of roads. Long route strings may exceed normal URL length limits and require sending the request via <code>POST</code> and <code>application/x-www-form-urlencoded</code> encoding the parameters.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">distance</th>
+        <td class="doc-parameter-required">No</td>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> decimal
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Default:</strong> <i>5.0</i>
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Range:</strong> <em>0.0</em> to <em>100.0</em>
+          </div>
+        </td>
+        <td class="doc-parameter-description">The distance (in miles) from the route to search for stations within.</td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">return_type</th>
+        <td class="doc-parameter-required">No</td>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Default:</strong> <i>all</i>
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Options:</strong> <em>all</em>, <i>ids</i>
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>Change the amount of data being returned for each station in the response.</p>
+          <table border="0" cellpadding="0" cellspacing="0" class="doc-parameter-options">
+            <thead>
+              <tr>
+                <th scope="col">Option</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">all</th>
+                <td>All station details for matching stations will be returned.</td>
+              </tr>
+              <tr>
+                <th scope="row">ids</th>
+                <td>Only the ID of each matching stations will be returned (this can lead to faster response times only the ID is needed).</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common2") %>
+      <tr>
+        <th class="doc-parameter-name" scope="row">limit</th>
+        <td class="doc-parameter-required">No</td>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> integer or string
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Default:</strong> all
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Range:</strong> <em>0</em> to <em>200</em>, or <em>all</em>
+          </div>
+        </td>
+        <td class="doc-parameter-description">The maximum number of results to return. An explicit limit of up to 200 may be passed in, or the special <code>all</code> string may be passed in to return all results.</td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">offset</th>
+        <td class="doc-parameter-required">No</td>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> integer
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Default:</strong> 0
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Minimum:</strong> <i>0</i>
+          </div>
+        </td>
+        <td class="doc-parameter-description">Offset the results found (can be used with the <em>limit</em> parameter to paginate the results).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-## Response Fields
+<div class="sticky-container">
+  <h2 class="sticky">Response Fields</h2>
 
-The response is composed of the fuel stations matching the requested query. For JSON or GeoJSON formats, additional metadata is supplied in the following structure:
+  The response is composed of the fuel stations matching the requested query. For JSON or GeoJSON formats, additional metadata is supplied in the following structure:
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Field</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/response_fields_common") %>
-    <tr>
-      <th class="doc-parameter-name" scope="row">offset</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> integer
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The result offset applied to this query (if the "offset" parameter was given).</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">fuel_stations</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> array
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        An array of matching fuel station records returned in order of ascending distance from the given location. See <a href="#fuel-station-record-fields">fuel station record fields</a> for response details.
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Field</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/response_fields_common") %>
+      <tr>
+        <th class="doc-parameter-name" scope="row">offset</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> integer
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The result offset applied to this query (if the "offset" parameter was given).</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">fuel_stations</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> array
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          An array of matching fuel station records returned in order of ascending distance from the given location. See <a href="#fuel-station-record-fields">fuel station record fields</a> for response details.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ### Fuel Station Record Fields
 

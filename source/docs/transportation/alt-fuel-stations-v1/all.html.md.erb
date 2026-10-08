@@ -15,56 +15,58 @@ sort_value: "10"
 ## Request URL
 
 <pre>GET /api/alt-fuel-stations/v1<em>.format?parameters</em></pre>
+<div class="sticky-container">
+  <h2 class="sticky"> Request Parameters</h2>
+  The following query parameters may be passed in the request to control the output:
 
-## Request Parameters
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Parameter</th>
+        <th class="doc-parameters-required" scope="col">Required</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common1") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/response_format") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common2") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ids") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/limit") %>
+    </tbody>
+  </table>
+</div>
 
-The following query parameters may be passed in the request to control the output:
+<div class="sticky-container">
+  <h2 class="sticky">Response Fields</h2>
+  The response is composed of the fuel stations matching the requested query. For JSON or GeoJSON formats, additional metadata is supplied in the following structure:
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Parameter</th>
-      <th class="doc-parameters-required" scope="col">Required</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common1") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/response_format") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common2") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ids") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/limit") %>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Field</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/response_fields_common") %>
+      <tr>
+        <th class="doc-parameter-name" scope="row">fuel_stations</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> array
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          An array of matching fuel station records returned in no specific order. See <a href="#fuel-station-record-fields">fuel station record fields</a> for response details.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-## Response Fields
-
-The response is composed of the fuel stations matching the requested query. For JSON or GeoJSON formats, additional metadata is supplied in the following structure:
-
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Field</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/response_fields_common") %>
-    <tr>
-      <th class="doc-parameter-name" scope="row">fuel_stations</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> array
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        An array of matching fuel station records returned in no specific order. See <a href="#fuel-station-record-fields">fuel station record fields</a> for response details.
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 ### Fuel Station Record Fields
 
@@ -73,8 +75,9 @@ The individual fuel station records are returned in no specific order. Each stat
 <%= partial("docs/transportation/alt-fuel-stations-v1/record_fields") %>
 
 <%= partial("docs/transportation/alt-fuel-stations-v1/station_count_record_fields") %>
-
-## Examples
+<div class="sticky">
+  <h2>Examples</h2>
+</div>
 
 ### JSON Output Format
 
