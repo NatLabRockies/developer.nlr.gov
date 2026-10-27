@@ -16,107 +16,111 @@ sort_value: "60"
 
 <pre>GET /api/alt-fuel-stations/v1/ev-charging-units.csv?parameters</pre>
 
-## Request Parameters
+<div class="sticky-container">
+  <h2 class="sticky">Request Parameters</h2>
 
-The following query parameters may be passed in the request to control the output:
+  The following query parameters may be passed in the request to control the output:
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Parameter</th>
-      <th class="doc-parameters-required" scope="col">Required</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/access") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/api_key") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/cards_accepted") %>
-    <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/country", locals: {resources: "stations"} %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_charging_level") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_connector_type") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_connector_type_operator") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_network") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_power_kw_max") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_power_kw_min") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/facility_type") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/federal_agency") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/limit") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/status") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/state") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/zip") %>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Parameter</th>
+        <th class="doc-parameters-required" scope="col">Required</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/access") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/api_key") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/cards_accepted") %>
+      <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/country", locals: {resources: "stations"} %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_charging_level") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_connector_type") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_connector_type_operator") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_network") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_power_kw_max") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_power_kw_min") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/facility_type") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/federal_agency") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/limit") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/status") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/state") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/zip") %>
+    </tbody>
+  </table>
+</div>
 
-## Response Fields
+<div class="sticky-container">
+  <h2 class="sticky">Response Fields</h2>
 
-The response is a CSV data download that includes information about EV charging power output by connector type matching the requested query. Each row in the spreadsheet represents an EV charging unit that might have one or more ports and one or more connectors. A single station location may have multiple rows in the spreadsheet.
+  The response is a CSV data download that includes information about EV charging power output by connector type matching the requested query. Each row in the spreadsheet represents an EV charging unit that might have one or more ports and one or more connectors. A single station location may have multiple rows in the spreadsheet.
 
-The table below documents the columns unique to this data download. For documentation on the remaining columns in the CSV, see the response fields for the [All Stations endpoint](/docs/transportation/alt-fuel-stations-v1/all/#response-fields).
+  The table below documents the columns unique to this data download. For documentation on the remaining columns in the CSV, see the response fields for the [All Stations endpoint](/docs/transportation/alt-fuel-stations-v1/all/#response-fields).
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th scope="col">Field</th>
-      <th scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>EV Level1 EVSE Num</th>
-      <td>Total number of Level 1 charging ports at station location</td>
-    </tr>
-    <tr>
-      <th>EV Level2 EVSE Num</th>
-      <td>Total number of Level 2 charging ports at station location</td>
-    </tr>
-    <tr>
-      <th>EV DC Fast Count</th>
-      <td>Total number of DC Fast charging ports at station location</td>
-    </tr>
-    <tr>
-      <th>EV J1772 Connector Count</th>
-      <td>Total number of J1772 connectors at station location</td>
-    </tr>
-    <tr>
-      <th>EV J1772 Power Output (kW)</th>
-      <td>Power output in kilowatts of J1772 ports</td>
-    </tr>
-    <tr>
-      <th>EV CCS Connector Count</th>
-      <td>Total number of CCS/J1772 Combo connectors at station location</td>
-    </tr>
-    <tr>
-      <th>EV CCS Power Output (kW)</th>
-      <td>Power output in kilowatts of CCS/J1772 Combo ports</td>
-    </tr>
-    <tr>
-      <th>EV CHAdeMO Connector Count</th>
-      <td>Total number of CHAdeMO connectors at station location</td>
-    </tr>
-    <tr>
-      <th>EV CHAdeMO Power Output (kW)</th>
-      <td>Power output in kilowatts of CHAdeMO ports</td>
-    </tr>
-    <tr>
-      <th>EV J3400 Connector Count</th>
-      <td>Total number of NACS/J3400 connectors at station location</td>
-    </tr>
-    <tr>
-      <th>EV J3400 Power Output (kW)</th>
-      <td>Power output in kilowatts of NACS/J3400 ports</td>
-    </tr>
-    <tr>
-      <th>EV J3271 Connector Count</th>
-      <td>Total number of MCS/J3271 connectors at station location</td>
-    </tr>
-    <tr>
-      <th>EV J3271 Power Output (kW)</th>
-      <td>Power output in kilowatts of MCS/J3271 ports</td>
-    </tr>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th scope="col">Field</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>EV Level1 EVSE Num</th>
+        <td>Total number of Level 1 charging ports at station location</td>
+      </tr>
+      <tr>
+        <th>EV Level2 EVSE Num</th>
+        <td>Total number of Level 2 charging ports at station location</td>
+      </tr>
+      <tr>
+        <th>EV DC Fast Count</th>
+        <td>Total number of DC Fast charging ports at station location</td>
+      </tr>
+      <tr>
+        <th>EV J1772 Connector Count</th>
+        <td>Total number of J1772 connectors at station location</td>
+      </tr>
+      <tr>
+        <th>EV J1772 Power Output (kW)</th>
+        <td>Power output in kilowatts of J1772 ports</td>
+      </tr>
+      <tr>
+        <th>EV CCS Connector Count</th>
+        <td>Total number of CCS/J1772 Combo connectors at station location</td>
+      </tr>
+      <tr>
+        <th>EV CCS Power Output (kW)</th>
+        <td>Power output in kilowatts of CCS/J1772 Combo ports</td>
+      </tr>
+      <tr>
+        <th>EV CHAdeMO Connector Count</th>
+        <td>Total number of CHAdeMO connectors at station location</td>
+      </tr>
+      <tr>
+        <th>EV CHAdeMO Power Output (kW)</th>
+        <td>Power output in kilowatts of CHAdeMO ports</td>
+      </tr>
+      <tr>
+        <th>EV J3400 Connector Count</th>
+        <td>Total number of NACS/J3400 connectors at station location</td>
+      </tr>
+      <tr>
+        <th>EV J3400 Power Output (kW)</th>
+        <td>Power output in kilowatts of NACS/J3400 ports</td>
+      </tr>
+      <tr>
+        <th>EV J3271 Connector Count</th>
+        <td>Total number of MCS/J3271 connectors at station location</td>
+      </tr>
+      <tr>
+        <th>EV J3271 Power Output (kW)</th>
+        <td>Power output in kilowatts of MCS/J3271 ports</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ## Rate Limits
 

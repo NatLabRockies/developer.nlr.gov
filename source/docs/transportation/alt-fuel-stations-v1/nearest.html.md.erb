@@ -15,148 +15,152 @@ sort_value: "30"
 
 <pre>GET /api/alt-fuel-stations/v1/nearest<em>.format?parameters</em></pre>
 
-## Request Parameters
+<div class="sticky-container">
+  <h2 class="sticky">Request Parameters</h2>
 
-The following query parameters may be passed in the request to control the output:
+  The following query parameters may be passed in the request to control the output:
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Parameter</th>
-      <th class="doc-parameters-required" scope="col">Required</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common1") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/response_format") %>
-    <tr>
-      <th class="doc-parameter-name" scope="row">latitude</th>
-      <td class="doc-parameter-required">Yes</td>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> decimal
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Range:</strong> <em>-90</em> to <em>90</em>
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The latitude of the desired location.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">longitude</th>
-      <td class="doc-parameter-required">Yes</td>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> decimal
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Range:</strong> <em>-180</em> to <em>180</em>
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The longitude of the desired location.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">radius</th>
-      <td class="doc-parameter-required">No</td>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> decimal or string
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Default:</strong> <i>5.0</i>
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Range:</strong> <em>0.0</em> to <em>500.0</em>, or <em>infinite</em>
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The radius (in miles) around the search location to search for stations within.</p>
-        <p>An explicit radius of up to 500.0 miles may be passed in, or the special <code>infinite</code> string may be passed in to find the nearest stations regardless of distance.</p>
-      </td>
-    </tr>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common2") %>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/limit", locals: {default: "20", bonus_description: " except when the radius is <code>infinite</code>"}) %>
-    <tr>
-      <th class="doc-parameter-name" scope="row">offset</th>
-      <td class="doc-parameter-required">No</td>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> integer
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Default:</strong> 0
-        </div>
-        <div class="doc-parameter-value-field">
-          <strong>Minimum:</strong> <i>0</i>
-        </div>
-      </td>
-      <td class="doc-parameter-description">Offset the results found (can be used with the <em>limit</em> parameter to paginate the results).</td>
-    </tr>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Parameter</th>
+        <th class="doc-parameters-required" scope="col">Required</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common1") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/response_format") %>
+      <tr>
+        <th class="doc-parameter-name" scope="row">latitude</th>
+        <td class="doc-parameter-required">Yes</td>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> decimal
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Range:</strong> <em>-90</em> to <em>90</em>
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The latitude of the desired location.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">longitude</th>
+        <td class="doc-parameter-required">Yes</td>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> decimal
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Range:</strong> <em>-180</em> to <em>180</em>
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The longitude of the desired location.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">radius</th>
+        <td class="doc-parameter-required">No</td>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> decimal or string
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Default:</strong> <i>5.0</i>
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Range:</strong> <em>0.0</em> to <em>500.0</em>, or <em>infinite</em>
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The radius (in miles) around the search location to search for stations within.</p>
+          <p>An explicit radius of up to 500.0 miles may be passed in, or the special <code>infinite</code> string may be passed in to find the nearest stations regardless of distance.</p>
+        </td>
+      </tr>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params_common2") %>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/limit", locals: {default: "20", bonus_description: " except when the radius is <code>infinite</code>"}) %>
+      <tr>
+        <th class="doc-parameter-name" scope="row">offset</th>
+        <td class="doc-parameter-required">No</td>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> integer
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Default:</strong> 0
+          </div>
+          <div class="doc-parameter-value-field">
+            <strong>Minimum:</strong> <i>0</i>
+          </div>
+        </td>
+        <td class="doc-parameter-description">Offset the results found (can be used with the <em>limit</em> parameter to paginate the results).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-## Response Fields
+<div class="sticky-container">
+  <h2 class="sticky">Response Fields</h2>
 
-The response is composed of the fuel stations matching the requested query. For JSON or GeoJSON formats, additional metadata is supplied in the following structure:
+  The response is composed of the fuel stations matching the requested query. For JSON or GeoJSON formats, additional metadata is supplied in the following structure:
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Field</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/response_fields_common") %>
-    <tr>
-      <th class="doc-parameter-name" scope="row">offset</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> integer
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The result offset applied to this query (if the "offset" parameter was given).</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">latitude</th>
-      <td class="doc-parameter-value"><strong>Type:</strong> decimal</td>
-      <td class="doc-parameter-description">The latitude of the given input location.</td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">longitude</th>
-      <td class="doc-parameter-value"><strong>Type:</strong> decimal</td>
-      <td class="doc-parameter-description">The longitude of the given input location.</td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">fuel_stations</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> array
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        An array of matching fuel station records returned in order of ascending distance from the given location. See <a href="#fuel-station-record-fields">fuel station record fields</a> for response details.
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Field</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/response_fields_common") %>
+      <tr>
+        <th class="doc-parameter-name" scope="row">offset</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> integer
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The result offset applied to this query (if the "offset" parameter was given).</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">latitude</th>
+        <td class="doc-parameter-value"><strong>Type:</strong> decimal</td>
+        <td class="doc-parameter-description">The latitude of the given input location.</td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">longitude</th>
+        <td class="doc-parameter-value"><strong>Type:</strong> decimal</td>
+        <td class="doc-parameter-description">The longitude of the given input location.</td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">fuel_stations</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> array
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          An array of matching fuel station records returned in order of ascending distance from the given location. See <a href="#fuel-station-record-fields">fuel station record fields</a> for response details.
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-### Fuel Station Record Fields
+  ### Fuel Station Record Fields
 
-The individual fuel station records are returned in order of ascending distance from the given location. Each station has the following attributes:
+  The individual fuel station records are returned in order of ascending distance from the given location. Each station has the following attributes:
 
-<%= partial("docs/transportation/alt-fuel-stations-v1/record_fields", :locals => { :distance => true }) %>
+  <%= partial("docs/transportation/alt-fuel-stations-v1/record_fields", :locals => { :distance => true }) %>
 
-<%= partial("docs/transportation/alt-fuel-stations-v1/station_count_record_fields") %>
+  <%= partial("docs/transportation/alt-fuel-stations-v1/station_count_record_fields") %>
+</div>
 
 ## Examples
 
