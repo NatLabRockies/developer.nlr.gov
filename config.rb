@@ -104,6 +104,10 @@ helpers do
     @_countries = loader.fetch("countries")
   end
 
+  def alt_fuel_stations_regions_by_country
+    @_regions_by_country ||= loader.fetch("regions_by_country").fetch("all")
+  end
+
   def alt_fuel_stations_electric_connectors
     @_electric_connectors ||= loader.fetch("electric_connectors_by_country").fetch("all")
   end

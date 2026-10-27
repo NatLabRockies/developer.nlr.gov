@@ -9,5 +9,37 @@
       <strong>Default:</strong> None
     </div>
   </td>
-  <td class="doc-parameter-description">Return only stations within the given state. State must be given as a two-character state code (eg, "CO" for Colorado). A single state, or a comma-separate list of multiple states, may be given.</td>
+  <td class="doc-parameter-description">
+    <p>Return only stations within a given U.S. state or Canadian province/territory. State must be given as a two-character state code (e.g., "CO" for Colorado, or "QC" for Quebec). For Canadian provinces and territories, the two-character code must be used alongside the country parameter (set to "CA"). A single state, or a comma-separated list of multiple states, may be given.</p>
+    <%
+      grouped_regions = alt_fuel_stations_regions_by_country.group_by do |region|
+        region.fetch("key").to_s.split('-').first
+      end
+    %>
+    <% ["all", "US", "CA"].each do |group_key| %>
+      <% regions = grouped_regions[group_key] %>
+      <% if group_key == "US" %>
+        <p><strong>United States</strong></p>
+      <% elsif group_key == "CA" %>
+        <p><strong>Canada</strong></p>
+      <% end %>
+
+      <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Option</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% regions.each do |region| %>
+            <tr>
+              <th scope="row"><%= region.fetch("key").to_s.split('-').last %></th>
+              <td><%= region.fetch("name") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </td>
 </tr>
