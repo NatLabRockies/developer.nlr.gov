@@ -5,14 +5,7 @@ h3.doc span.url {
   padding-left: 12px;
 }
 
-html,
-body {
-  overflow-x: clip;
-}
 .sticky-container {
-  height: min-content;
-  position: relative;
-
   .sticky {
     z-index: 1000;
     position: sticky;

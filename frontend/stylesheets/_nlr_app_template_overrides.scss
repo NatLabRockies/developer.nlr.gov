@@ -1,6 +1,11 @@
 // Various overrides to try and make the nlr-app-template styles better match
 // the current production NLR.gov styles.
 
+// For sticky headers
+html {
+    overflow: unset;
+}
+
 .application .navbar-light .navbar-nav > li > a,
 .program-header .navbar-light .navbar-nav >li > a {
   border-width: 0px !important;
