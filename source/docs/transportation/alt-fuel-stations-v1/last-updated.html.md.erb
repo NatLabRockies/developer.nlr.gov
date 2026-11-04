@@ -14,48 +14,52 @@ sort_value: "70"
 
 <pre>GET /api/alt-fuel-stations/v1/last-updated<em>.format?parameters</em></pre>
 
-## Request Parameters
+<div class="sticky-container">
+  <h2 class="sticky">Request Parameters</h2>
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Parameter</th>
-      <th class="doc-parameters-required" scope="col">Required</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/format", locals: {formats: %w[json]} %>
-    <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/api_key" %>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Parameter</th>
+        <th class="doc-parameters-required" scope="col">Required</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/format", locals: {formats: %w[json]} %>
+      <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/api_key" %>
+    </tbody>
+  </table>
+</div>
 
-## Response Fields
+<div class="sticky-container">
+  <h2 class="sticky">Response Fields</h2>
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Field</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th class="doc-parameter-name" scope="row">last_updated</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> datetime
-        </div>
-        <div class="doc-parameter-value-field"></div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The time the alternative fuel stations data was last updated (<a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format).</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Field</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="doc-parameter-name" scope="row">last_updated</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> datetime
+          </div>
+          <div class="doc-parameter-value-field"></div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The time the alternative fuel stations data was last updated (<a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format).</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ## Examples
 

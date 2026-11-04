@@ -16,184 +16,186 @@ sort_value: "50"
 
 <pre>GET /api/alt-fuel-stations/v1/electric-networks.json<em>?parameters</em></pre>
 
-## Request Parameters
+<div class="sticky-container">
+  <h2 class="sticky">Request Parameters</h2>
+  The following query parameters may be passed in the request to control the output:
 
-The following query parameters may be passed in the request to control the output:
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Parameter</th>
+        <th class="doc-parameters-required" scope="col">Required</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/api_key") %>
+      <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/country", locals: {resources: "networks"} %>
+      <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/include_inactive", locals: {resources: "EV charging networks"} %>
+    </tbody>
+  </table>
+</div>
 
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Parameter</th>
-      <th class="doc-parameters-required" scope="col">Required</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/api_key") %>
-    <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/country", locals: {resources: "networks"} %>
-    <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/include_inactive", locals: {resources: "EV charging networks"} %>
-  </tbody>
-</table>
+<div class="sticky-container">
+  <h2 class="sticky">Response Fields</h2>
+  The response is composed of a list of electric vehicle charging networks matching the requested query. The network data is provided in the following structure.
 
-## Response Fields
-
-The response is composed of a list of electric vehicle charging networks matching the requested query. The network data is provided in the following structure.
-
-<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
-  <thead>
-    <tr>
-      <th class="doc-parameters-name" scope="col">Field</th>
-      <th class="doc-parameters-value" scope="col">Value</th>
-      <th class="doc-parameters-description" scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th class="doc-parameter-name" scope="row">key</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The key that identifies the charging network.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">evchart_key</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>A key in use for EV-ChART.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">name</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>EV charging network name.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">url</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The URL for the charging network.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">last_import_date</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> date
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The most recent date for which equipment data has been confirmed.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">date_added</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> date
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The date the network was added to the AFDC.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">date_removed</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> date
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The date the network was removed from the AFDC.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">import_type</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>The method by which data about the network is imported.</p>
-        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Value</th>
-              <th scope="col">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">CSV</th>
-              <td>CSV import</td>
-            </tr>
-            <tr>
-              <th scope="row">API</th>
-              <td>API import</td>
-            </tr>
-            <tr>
-              <th scope="row">Manual</th>
-              <td>Data is manually entered</td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">transition_network_key</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>For networks removed from the AFDC, the key of the acquiring network, if any.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">transition_note</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>For networks that acquired or merged with other networks, a comma-separated list of the former network names.</p>
-      </td>
-    </tr>
-    <tr>
-      <th class="doc-parameter-name" scope="row">transition_timeframe</th>
-      <td class="doc-parameter-value">
-        <div class="doc-parameter-value-field">
-          <strong>Type:</strong> string
-        </div>
-      </td>
-      <td class="doc-parameter-description">
-        <p>For networks removed from the AFDC, the timeframe when the network acquisition or transition was complete.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+    <thead>
+      <tr>
+        <th class="doc-parameters-name" scope="col">Field</th>
+        <th class="doc-parameters-value" scope="col">Value</th>
+        <th class="doc-parameters-description" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="doc-parameter-name" scope="row">key</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The key that identifies the charging network.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">evchart_key</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>A key in use for EV-ChART.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">name</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>EV charging network name.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">url</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The URL for the charging network.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">last_import_date</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> date
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The most recent date for which equipment data has been confirmed.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">date_added</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> date
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The date the network was added to the AFDC.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">date_removed</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> date
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The date the network was removed from the AFDC.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">import_type</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>The method by which data about the network is imported.</p>
+          <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Value</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">CSV</th>
+                <td>CSV import</td>
+              </tr>
+              <tr>
+                <th scope="row">API</th>
+                <td>API import</td>
+              </tr>
+              <tr>
+                <th scope="row">Manual</th>
+                <td>Data is manually entered</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">transition_network_key</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>For networks removed from the AFDC, the key of the acquiring network, if any.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">transition_note</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>For networks that acquired or merged with other networks, a comma-separated list of the former network names.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="doc-parameter-name" scope="row">transition_timeframe</th>
+        <td class="doc-parameter-value">
+          <div class="doc-parameter-value-field">
+            <strong>Type:</strong> string
+          </div>
+        </td>
+        <td class="doc-parameter-description">
+          <p>For networks removed from the AFDC, the timeframe when the network acquisition or transition was complete.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ## Examples
 
