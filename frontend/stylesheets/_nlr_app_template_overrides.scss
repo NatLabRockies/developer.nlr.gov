@@ -2,8 +2,10 @@
 // the current production NLR.gov styles.
 
 // For sticky headers
-html {
+@include media-breakpoint-up(lg) {
+  html, body {
     overflow: unset;
+  }
 }
 
 .application .navbar-light .navbar-nav > li > a,

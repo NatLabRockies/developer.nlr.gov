@@ -18,7 +18,7 @@ sort_value: "30"
 <div class="sticky-container">
   <h2 class="sticky-top p-2 bg-body-secondary border-bottom">Request Parameters</h2>
 
-  The following query parameters may be passed in the request to control the output:
+  <p>The following query parameters may be passed in the request to control the output:</p>
 
   <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
     <thead>
@@ -106,7 +106,7 @@ sort_value: "30"
 <div class="sticky-container">
   <h2 class="sticky-top p-2 bg-body-secondary border-bottom">Response Fields</h2>
 
-  The response is composed of the fuel stations matching the requested query. For JSON or GeoJSON formats, additional metadata is supplied in the following structure:
+  <p>The response is composed of the fuel stations matching the requested query. For JSON or GeoJSON formats, additional metadata is supplied in the following structure:</p>
 
   <table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
     <thead>
@@ -153,9 +153,9 @@ sort_value: "30"
     </tbody>
   </table>
 
-  ### Fuel Station Record Fields
+  <h3>Fuel Station Record Fields</h3>
 
-  The individual fuel station records are returned in order of ascending distance from the given location. Each station has the following attributes:
+  <p>The individual fuel station records are returned in order of ascending distance from the given location. Each station has the following attributes:</p>
 
   <%= partial("docs/transportation/alt-fuel-stations-v1/record_fields", :locals => { :distance => true }) %>
 
