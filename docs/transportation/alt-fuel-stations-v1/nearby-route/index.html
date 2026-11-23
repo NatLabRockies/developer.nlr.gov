@@ -5249,6 +5249,36 @@ LINESTRING(-74.0 40.7, -87.63 41.87, -104.98 39.76)
         </table>
       </td>
     </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">ev_power_sharing</th>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field">
+          <strong>Type:</strong> boolean
+        </div>
+      </td>
+      <td class="doc-parameter-description">
+        <p>For EV charging stations, an indication of whether the station can distribute available electrical power among multiple ports or vehicles charging at the same time, given as a boolean:</p>
+        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Value</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">true</th>
+              <td>The EV charging station can distribute power among multiple ports. As a result, the power available to each vehicle may vary depending on how many vehicles are charging simultaneously.</td>
+            </tr>
+            <tr>
+              <th scope="row">false</th>
+              <td>The EV charging station does not support power sharing.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>When the value is missing (null or blank), information about power-sharing capabilities is unknown or has not been captured yet.</p>
+      </td>
+    </tr>
     <tr id="ev-charging-units">
       <th class="doc-parameter-name" scope="row">ev_charging_units</th>
       <td class="doc-parameter-value">
@@ -5557,6 +5587,7 @@ LINESTRING(-74.0 40.7, -87.63 41.87, -104.98 39.76)
       </span><span class="nl">"ev_network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non-Networked"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_network_web"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_other_evse"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ev_power_sharing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_pricing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_renewable_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_workplace_charging"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -5683,6 +5714,7 @@ LINESTRING(-74.0 40.7, -87.63 41.87, -104.98 39.76)
       </span><span class="nl">"ev_network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChargePoint Network"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_network_web"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.chargepoint.com"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_other_evse"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ev_power_sharing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_pricing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_renewable_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ev_workplace_charging"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -5912,6 +5944,7 @@ LINESTRING(-74.0 40.7, -87.63 41.87, -104.98 39.76)
         </span><span class="nl">"ev_network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non-Networked"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_network_web"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_other_evse"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ev_power_sharing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_pricing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_renewable_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_workplace_charging"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -6046,6 +6079,7 @@ LINESTRING(-74.0 40.7, -87.63 41.87, -104.98 39.76)
         </span><span class="nl">"ev_network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChargePoint Network"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_network_web"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.chargepoint.com"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_other_evse"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ev_power_sharing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_pricing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_renewable_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ev_workplace_charging"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
