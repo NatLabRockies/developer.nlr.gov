@@ -1343,6 +1343,36 @@
         </table>
       </td>
     </tr>
+    <tr>
+      <th class="doc-parameter-name" scope="row">ev_power_sharing</th>
+      <td class="doc-parameter-value">
+        <div class="doc-parameter-value-field">
+          <strong>Type:</strong> boolean
+        </div>
+      </td>
+      <td class="doc-parameter-description">
+        <p>For EV charging stations, an indication of whether the station can distribute available electrical power among multiple ports or vehicles charging at the same time, given as a boolean:</p>
+        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Value</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">true</th>
+              <td>The EV charging station can distribute power among multiple ports. As a result, the power available to each vehicle may vary depending on how many vehicles are charging simultaneously.</td>
+            </tr>
+            <tr>
+              <th scope="row">false</th>
+              <td>The EV charging station does not support power sharing.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>When the value is missing (null or blank), information about power-sharing capabilities is unknown or has not been captured yet.</p>
+      </td>
+    </tr>
     <tr id="ev-charging-units">
       <th class="doc-parameter-name" scope="row">ev_charging_units</th>
       <td class="doc-parameter-value">
