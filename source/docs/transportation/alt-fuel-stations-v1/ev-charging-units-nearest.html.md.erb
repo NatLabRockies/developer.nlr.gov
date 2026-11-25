@@ -1,0 +1,80 @@
+---
+title: Nearest Electric Vehicle Charging Ports
+summary: Return a CSV file of EV charging ports for the nearest alternative fuel stations within a distance of a given location. For JSON or other file formats, this information is available via the <a href="/docs/transportation/alt-fuel-stations-v1/nearest/">Nearest Stations</a> API.
+url: GET /api/alt-fuel-stations/v1/ev-charging-units/nearest
+sort_value: "65"
+---
+
+# <%= current_page.data.title %> <span class="url">(<%= current_page.data.url %>)</span>
+<%= current_page.data.summary %>
+
+{:toc}
+
+<%= partial "layouts/toc" %>
+
+## Request URL
+
+<pre>GET /api/alt-fuel-stations/v1/ev-charging-units/nearest.csv?parameters</pre>
+
+## Request Parameters
+
+The following query parameters may be passed in the request to control the output:
+
+<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+  <thead>
+    <tr>
+      <th class="doc-parameters-name" scope="col">Parameter</th>
+      <th class="doc-parameters-required" scope="col">Required</th>
+      <th class="doc-parameters-value" scope="col">Value</th>
+      <th class="doc-parameters-description" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/access") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/api_key") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/latitude") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/longitude") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/radius") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/cards_accepted") %>
+    <%= partial "docs/transportation/alt-fuel-stations-v1/request_params/country", locals: {resources: "stations"} %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_charging_level") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_connector_type") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_connector_type_operator") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_network") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_power_kw_max") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/ev_power_kw_min") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/facility_type") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/federal_agency") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/nearest_limit") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/offset") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/status") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/state") %>
+    <%= partial("docs/transportation/alt-fuel-stations-v1/request_params/zip") %>
+  </tbody>
+</table>
+
+## Response Fields
+<%= partial("docs/transportation/alt-fuel-stations-v1/ev_charging_units_response_common") %>
+
+## Rate Limits
+
+[Standard rate limits](/docs/rate-limits) apply. No more than 1,000 requests may be made in any hour
+
+## Errors
+
+[Standard errors](/docs/errors) may be returned. In addition, the following service-specific errors may be returned:
+
+<table border="0" cellpadding="0" cellspacing="0" class="doc-parameters">
+  <thead>
+    <tr>
+      <th class="doc-parameters-name" scope="col">HTTP Status Code</th>
+      <th class="doc-parameters-required" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="doc-parameter-name" scope="row">422</th>
+      <td class="doc-parameter-description">Unprocessable Entity - An invalid value was given for a query parameter. The response body will describe the specific error.</td>
+    </tr>
+  </tbody>
+</table>
