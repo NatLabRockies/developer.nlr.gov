@@ -5,6 +5,16 @@ h3.doc span.url {
   padding-left: 12px;
 }
 
+.sticky-container {
+  .sticky {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    padding: .4em .6em .3em .6em;
+    margin-bottom: .5em;
+  }
+}
+
 #toc ul {
   margin-bottom: 0px;
 }
@@ -33,13 +43,13 @@ h3.doc span.url {
     margin-bottom: 0px;
   }
 
-  > :not(caption) > * > * {
+  > :not(caption)>*>* {
     padding: 0.5rem 0.75rem;
   }
 }
 
 .doc-parameters {
-  > thead th {
+  >thead th {
     color: #555;
     background-color: #e5e5e5;
     background-image: linear-gradient(to bottom, #edeeef 0%, #e5e5e5 100%);
@@ -48,7 +58,7 @@ h3.doc span.url {
 }
 
 .doc-parameter-options {
-  > thead th {
+  >thead th {
     color: #555;
   }
 
